@@ -4,7 +4,7 @@ export interface Product {
   category: string;
   subcategory: string;
   composition: string;
-  image: string;
+  image: string;      // public path (served from /public)
   description: string;
   targetPests?: string;
   crops?: string;
@@ -12,6 +12,11 @@ export interface Product {
   packing: string;
   features?: string[];
 }
+
+// NOTE:
+// All `image` paths below assume files live under `public/assets/...`
+// e.g. public/assets/products/INSECTICIDE/white-kill.png
+// and you render them like: <img src={product.image} ... />
 
 export const products: Product[] = [
   // INSECTICIDES
@@ -21,7 +26,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Acetamiprid 20% SP",
-    image: "/src/assets/products/INSECTICIDE/white-kill.png",
+    image: "/assets/products/INSECTICIDE/white-kill.png",
     description: "Highly effective systemic insecticide for controlling sucking pests",
     targetPests: "Aphids, Jassids, Whitefly, Thrips",
     crops: "Cotton, Rice, Vegetables, Fruits",
@@ -35,7 +40,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Alpha-Cypermethrin 10% SC",
-    image: "/src/assets/products/INSECTICIDE/alpha-guard.PNG",
+    image: "/assets/products/INSECTICIDE/alpha-guard.PNG",
     description: "Broad spectrum insecticide for effective pest control",
     targetPests: "Bollworms, Pod borers, Caterpillars",
     crops: "Cotton, Vegetables, Pulses",
@@ -43,28 +48,27 @@ export const products: Product[] = [
     packing: "100ml, 250ml, 500ml, 1L",
     features: ["Broad spectrum", "Cost effective", "Residual action"]
   },
-    {
+  {
     id: "killmax",
     name: "KILLMAX",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Bifenthrin 10% EC",
-    image: "/src/assets/products/INSECTICIDE/Killmax.png",
+    image: "/assets/products/INSECTICIDE/Killmax.png",
     description: "Broad spectrum insecticide for effective pest control",
     targetPests: "Bollworm, Whitefly, Stem borer, Leaf folder, Green leaf hopper, Termites",
     crops: "Cotton, Rice and Sugarcane",
     dosage: "200–320 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml",
+    packing: "1 Litre, 500 ml, 250 ml",
     features: ["Broad spectrum", "Cost effective", "Residual action"]
   },
-
   {
     id: "boss",
     name: "BOSS",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Buprofezin 25% SC",
-    image: "/src/assets/products/INSECTICIDE/boss.png",
+    image: "/assets/products/INSECTICIDE/boss.png",
     description: "Insect growth regulator for sucking pest control",
     targetPests: "Brown plant hopper, White fly, Jassids",
     crops: "Rice, Cotton, Vegetables",
@@ -72,18 +76,18 @@ export const products: Product[] = [
     packing: "100ml, 250ml, 500ml, 1L",
     features: ["IGR action", "Safe for beneficial insects", "Long lasting"]
   },
-   {
+  {
     id: "delete",
     name: "DELETE",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Fenobucarb (BPMC) 50% EC",
-    image: "/src/assets/products/INSECTICIDE/Delete.png",
+    image: "/assets/products/INSECTICIDE/Delete.png",
     description: "Insect growth regulator for sucking pest control",
     targetPests: "Brown Plant Hopper, Green Leaf Hopper",
     crops: "Paddy, Cotton, Cereals, Oilseeds, Fruits, Vegetables & Tea",
     dosage: "400-500ml/acre",
-    packing: "1 Litre, 500 ml",
+    packing: "1 Litre, 500 ml",
     features: ["IGR action", "Safe for beneficial insects", "Long lasting"]
   },
   {
@@ -92,7 +96,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Carbofuran 3% CG",
-    image: "/src/assets/products/INSECTICIDE/fuara.png",
+    image: "/assets/products/INSECTICIDE/Fuara.png",
     description: "Systemic insecticide and nematicide for soil application",
     targetPests: "Stem borer, Gall midge, Nematodes",
     crops: "Rice, Sugarcane, Banana",
@@ -106,7 +110,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Cartap Hydrochloride 4% G",
-    image: "/src/assets/products/INSECTICIDE/rextap.png",
+    image: "/assets/products/INSECTICIDE/rextap.jpg",
     description: "Granular insecticide for paddy stem borer control",
     targetPests: "Stem borer, Leaf folder, Case worm",
     crops: "Rice (Paddy)",
@@ -120,7 +124,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Cartap Hydrochloride 50% SP",
-    image: "/src/assets/products/INSECTICIDE/REXTAP-SP.jpeg",
+    image: "/assets/products/INSECTICIDE/REXTAP-SP.jpeg",
     description: "Soluble powder insecticide for chewing pests",
     targetPests: "Stem borer, Leaf folder, Diamond back moth",
     crops: "Rice, Vegetables",
@@ -134,7 +138,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Chlorpyriphos 20% EC",
-    image: "/src/assets/products/INSECTICIDE/mahabaan.png",
+    image: "/assets/products/INSECTICIDE/mahabaan.png",
     description: "Broad spectrum organophosphate insecticide",
     targetPests: "Termites, Stem borer, Cutworms, Bollworms",
     crops: "All crops",
@@ -148,7 +152,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Chlorpyriphos 50% + Cypermethrin 5% EC",
-    image: "/src/assets/products/INSECTICIDE/ankush.png",
+    image: "/assets/products/INSECTICIDE/ankush.png",
     description: "Combination insecticide with dual action",
     targetPests: "Bollworms, Aphids, Jassids, White fly",
     crops: "Cotton, Vegetables, Fruits",
@@ -162,7 +166,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Cypermethrin 25% EC",
-    image: "/src/assets/products/INSECTICIDE/Cyper 25.png",
+    image: "/assets/products/INSECTICIDE/Cyper 25.png",
     description: "Synthetic pyrethroid for quick pest knockdown",
     targetPests: "Bollworms, Pod borers, Caterpillars",
     crops: "Cotton, Vegetables, Fruits",
@@ -170,13 +174,13 @@ export const products: Product[] = [
     packing: "100ml, 250ml, 500ml, 1L",
     features: ["Quick action", "Low dose", "Effective"]
   },
-    {
+  {
     id: "super-chloro",
     name: "SUPER CHLORO",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Chlorpyriphos 50% EC",
-    image: "/src/assets/products/INSECTICIDE/Super Chloro.png",
+    image: "/assets/products/INSECTICIDE/Super Chloro.png",
     description: "Synthetic pyrethroid for quick pest knockdown",
     targetPests: "Bollworms, Pod borers, Caterpillars",
     crops: "Paddy, Beans, Gram, Sugarcane, Cotton, Groundnut, Mustard, Brinjal,Cabbage, Onion, Apple, Ber, Citrus, Tobacco, and Termites in buildings",
@@ -184,28 +188,27 @@ export const products: Product[] = [
     packing: "100ml, 250ml, 500ml, 1L",
     features: ["Quick action", "Low dose", "Effective"]
   },
-    {
+  {
     id: "attack PLUS",
     name: "ATTACK PLUS",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Imidacloprid 70% WG",
-    image: "/src/assets/products/INSECTICIDE/ATTACK PLUS.PNG",
+    image: "/assets/products/INSECTICIDE/ATTACK PLUS.PNG",
     description: "Highly potent pyrethroid insecticide",
     targetPests: "Bollworms, Aphids, Jassids, Thrips",
     crops: "Same as Attack",
     dosage: "30 g/acre",
-    packing: "30 g, 75 g, 150 g",
+    packing: "30 g, 75 g, 150 g",
     features: ["High potency", "Quick knockdown", "Long lasting"]
   },
-
   {
     id: "attack",
     name: "ATTACK",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Imidacloprid 17.8% WG",
-    image: "/src/assets/products/INSECTICIDE/attack.png",
+    image: "/assets/products/INSECTICIDE/attack.png",
     description: "Highly potent pyrethroid insecticide",
     targetPests: "Bollworms, Aphids, Jassids, Thrips",
     crops: "Cotton, Paddy, Chilli, Sugarcane, Mango, Sunflower,Okra, Citrus, Groundnut",
@@ -213,13 +216,13 @@ export const products: Product[] = [
     packing: "100ml, 250ml, 500ml, 1L",
     features: ["High potency", "Quick knockdown", "Long lasting"]
   },
-    {
+  {
     id: "r-lambda",
     name: "R-LAMBDA",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Lambda-Cyhalothrin 5% EC",
-    image: "/src/assets/products/INSECTICIDE/R-LAMBDA.jpeg",
+    image: "/assets/products/INSECTICIDE/R-LAMBDA.jpeg",
     description: "Highly potent pyrethroid insecticide",
     targetPests: "Bollworms, Aphids, Jassids, Thrips",
     crops: "Cotton, Paddy, Chilli, Sugarcane, Mango, Sunflower,Okra, Citrus, Groundnut",
@@ -227,13 +230,13 @@ export const products: Product[] = [
     packing: "100ml, 250ml, 500ml, 1L",
     features: ["High potency", "Quick knockdown", "Long lasting"]
   },
-     {
+  {
     id: "r-lambda plus",
     name: "R-LAMBDA PLUS",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Lambda-Cyhalothrin 4.9% CS",
-    image: "/src/assets/products/INSECTICIDE/R-LAMBDA PLUS.PNG",
+    image: "/assets/products/INSECTICIDE/R-LAMBDA PLUS.PNG",
     description: "Highly potent pyrethroid insecticide",
     targetPests: "Bollworms, Aphids, Jassids, Thrips",
     crops: "Cotton, Paddy, Chilli, Sugarcane, Mango, Sunflower,Okra, Citrus, Groundnut",
@@ -247,12 +250,12 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Fipronil 40% + Imidacloprid 40% WG",
-    image: "/src/assets/products/INSECTICIDE/CHAUKIDAR.PNG",
+    image: "/assets/products/INSECTICIDE/CHAUKIDAR.PNG",
     description: "Highly potent pyrethroid insecticide",
     targetPests: "Bollworms, Aphids, Jassids, Thrips",
     crops: "Cotton, Paddy, Chilli, Sugarcane, Mango, Sunflower,Okra, Citrus, Groundnut",
     dosage: "60–100 g/acre",
-    packing: "250 g, 100 g, 40 g",
+    packing: "250 g, 100 g, 40 g",
     features: ["High potency", "Quick knockdown", "Long lasting"]
   },
   {
@@ -261,55 +264,55 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Profenofos 40% + Cypermethrin 4% EC",
-    image: "/src/assets/products/INSECTICIDE/PROFEN PLUS.jpeg",
+    image: "/assets/products/INSECTICIDE/PROFEN PLUS.jpeg",
     description: "Highly potent pyrethroid insecticide",
     targetPests: "Bollworm pest",
     crops: "Cotton & Vegetables, Rice",
     dosage: "400–600 ml/acre",
-    packing: "250 g, 100 g, 40 g",
+    packing: "250 g, 100 g, 40 g",
     features: ["High potency", "Quick knockdown", "Long lasting"]
   },
-  
+
   {
     id: "king-Kobra Super",
     name: "KING KOBRA SUPER",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Emamectin Benzoate 1.9% EC",
-    image: "/src/assets/products/INSECTICIDE/KING KOBRA PLUS.png",
+    image: "/assets/products/INSECTICIDE/KING KOBRA PLUS.PNG",
     description: "Systemic insecticide for sucking pests",
     targetPests: "Sucking pest, Bollworm pest",
     crops: "Cotton, Rice, Vegetables",
     dosage: "60–100 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
+    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
     features: ["Systemic action", "Long duration", "Effective"]
   },
-   {
+  {
     id: "king-Kobra",
     name: "KING KOBRA ",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Emamectin Benzoate 5% SG",
-    image: "/src/assets/products/INSECTICIDE/king-cobra.png",
+    image: "/assets/products/INSECTICIDE/king-cobra.png",
     description: "Systemic insecticide for sucking pests",
     targetPests: "Sucking pest, Bollworm pest",
     crops: "Cotton, Okra, Cabbage, Chillies, Brinjal, Red Gram,Chickpea, Grapes",
     dosage: "80–90 g/acre",
-    packing: "500 g, 250 g, 100 g",
+    packing: "500 g, 250 g, 100 g",
     features: ["Systemic action", "Long duration", "Effective"]
   },
-    {
+  {
     id: "DHAMAKA",
     name: "DHAMAKA",
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Fipronil 5% SC",
-    image: "/src/assets/products/INSECTICIDE/DHAMAKA.png",
+    image: "/assets/products/INSECTICIDE/DHAMAKA.PNG",
     description: "Broad spectrum soil application insecticide",
     targetPests: "Sucking pest & Borer pest",
     crops: "Rice, Sugarcane",
     dosage: "100 gm/acre",
-    packing: "100 gm",
+    packing: "100 gm",
     features: ["Long duration", "Soil application", "Broad spectrum"]
   },
   {
@@ -318,15 +321,14 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Fipronil 0.3% GR",
-    image: "/src/assets/products/INSECTICIDE/genius.png",
+    image: "/assets/products/INSECTICIDE/genius.png",
     description: "Broad spectrum soil application insecticide",
     targetPests: "Sucking pest & Borer pest",
     crops: "Rice, Sugarcane",
     dosage: "6.5–13 kg/acre",
-    packing: "5 kg, 1 kg",
+    packing: "5 kg, 1 kg",
     features: ["Long duration", "Soil application", "Broad spectrum"]
   },
-
 
   {
     id: "genius",
@@ -334,12 +336,12 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Fipronil 5% SC",
-    image: "/src/assets/products/INSECTICIDE/genius.png",
+    image: "/assets/products/INSECTICIDE/genius.png",
     description: "Broad spectrum soil application insecticide",
     targetPests: "Sucking pest & Borer pest",
     crops: "Rice, Sugarcane",
     dosage: "250 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
+    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
     features: ["Long duration", "Soil application", "Broad spectrum"]
   },
   {
@@ -348,12 +350,12 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Fipronil 0.6% GR",
-    image: "/src/assets/products/INSECTICIDE/GENIUS ULTRA.png",
+    image: "/assets/products/INSECTICIDE/GENIUS ULTRA.PNG",
     description: "High concentration fipronil granules",
     targetPests: "Stem borer, Leaf folder, Thrips, Gall midge",
     crops: "Rice, Sugarcane",
     dosage: "4kg-8kg/acre",
-    packing: "4 kg",
+    packing: "4 kg",
     features: ["Higher concentration", "Low dose", "Effective control"]
   },
   {
@@ -362,26 +364,26 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Bio",
     composition: "Bio Insect Controller",
-    image: "/src/assets/products/INSECTICIDE/tornado.PNG",
+    image: "/assets/products/INSECTICIDE/tornado.PNG",
     description: "Biological insect control solution",
     targetPests: "Various insect pests",
     crops: "All crops",
     dosage: "4–8 kg/acre",
-    packing: "4 kg",
+    packing: "4 kg",
     features: ["Biological", "Eco-friendly", "Safe"]
   },
-   {
+  {
     id: "rdx",
     name: "RDX",
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Chlorantraniliprole 18.5% SC",
-    image: "/src/assets/products/INSECTICIDE/RDX.PNG",
+    image: "/assets/products/INSECTICIDE/RDX.PNG",
     description: "Premium granular insecticide for rice",
     targetPests: "Shoot borer, Stem borer",
     crops: "Cotton, Paddy, Sugarcane, Wheat, Bajra, Soybean",
     dosage: "60–150 ml/acre",
-    packing: "10 ml, 30 ml, 60 ml, 150 ml",
+    packing: "10 ml, 30 ml, 60 ml, 150 ml",
     features: ["Premium quality", "Long lasting", "Effective"]
   },
   {
@@ -390,7 +392,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Chlorantraniliprole 0.4% GR",
-    image: "/src/assets/products/INSECTICIDE/rdx-ultra.PNG",
+    image: "/assets/products/INSECTICIDE/rdx-ultra.PNG",
     description: "Premium granular insecticide for rice",
     targetPests: "Shoot borer, Stem borer",
     crops: "Cotton, Paddy, Sugarcane, Wheat, Bajra, Soybean",
@@ -398,47 +400,47 @@ export const products: Product[] = [
     packing: "4kg, 10kg",
     features: ["Premium quality", "Long lasting", "Effective"]
   },
-    {
+  {
     id: "ghatak",
     name: "GHATAK",
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Chlorantraniliprole 0.4% GR",
-    image: "/src/assets/products/INSECTICIDE/ghatak.PNG",
+    image: "/assets/products/INSECTICIDE/ghatak.PNG",
     description: "Premium granular insecticide for rice",
     targetPests: "Shoot borer, Stem borer",
     crops: "Cotton, Paddy, Sugarcane, Wheat, Bajra, Soybean",
     dosage: "60–150 ml/acre",
-    packing: "10 ml, 30 ml, 60 ml, 150 ml",
+    packing: "10 ml, 30 ml, 60 ml, 150 ml",
     features: ["Premium quality", "Long lasting", "Effective"]
   },
-     {
+  {
     id: "BHRAHMASTHRA",
     name: "BHRAHMASTHRA",
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Chlorantraniliprole 0.4% GR",
-    image: "/src/assets/products/INSECTICIDE/bhrahmasthra.PNG",
+    image: "/assets/products/INSECTICIDE/bhrahmasthra.PNG",
     description: "Premium granular insecticide for rice",
     targetPests: "Shoot borer, Stem borer",
     crops: "Maize, Pulses, Oil Seeds",
     dosage: "60–150 ml/acre",
-    packing: "10 ml, 30 ml, 60 ml, 150 ml",
+    packing: "10 ml, 30 ml, 60 ml, 150 ml",
     features: ["Premium quality", "Long lasting", "Effective"]
   },
-  
+
   {
     id: "BLACK COMMANDO",
     name: "BLACK COMMANDO",
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Thiamethoxam 25% WG",
-    image: "/src/assets/products/INSECTICIDE/Black Commando.png",
+    image: "/assets/products/INSECTICIDE/Black Commando.png",
     description: "Next generation neonicotinoid insecticide",
     targetPests: "Sucking pest, Black hopper",
     crops: "Cotton, Rice, Chillies, Mango, Grapes",
     dosage: "250–400 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml",
+    packing: "1 Litre, 500 ml, 250 ml",
     features: ["Low dose", "Systemic", "Long duration"]
   },
   {
@@ -447,7 +449,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Thiamethoxam 25% WG",
-    image: "/src/assets/products/INSECTICIDE/expert.png",
+    image: "/assets/products/INSECTICIDE/expert.png",
     description: "Next generation neonicotinoid insecticide",
     targetPests: "Aphids, Jassids, White fly, Thrips",
     crops: "Rice, Cotton, Mango, Wheat, Mustard, Tomato, Brinjal, Tea, Potato",
@@ -461,12 +463,12 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Thiamethoxam 30% FS",
-    image: "/src/assets/products/INSECTICIDE/Expert Plus.png",
+    image: "/assets/products/INSECTICIDE/Expert Plus.png",
     description: "Dual action combination insecticide",
     targetPests: "Bollworms, Aphids, Jassids, Thrips",
     crops: "Cotton, Sorghum, Soyabean, Wheat, Sunflower, Maize, Okra, Chillies",
     dosage: "100-125ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
+    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
     features: ["Dual action", "Broad spectrum", "Quick and long action"]
   },
   {
@@ -475,12 +477,12 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Thiamethoxam 12.6% + Lambda-Cyhalothrin 9.5% ZC",
-    image: "/src/assets/products/INSECTICIDE/Action Plus.png",
+    image: "/assets/products/INSECTICIDE/Action Plus.png",
     description: "Premium combination for rice pests",
     targetPests: "Brown plant hopper, Stem borer, Leaf folder",
     crops: "Cotton, Sorghum, Soyabean, Wheat, Sunflower, Maize, Okra, Chillies",
     dosage: "50–80 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
+    packing: "1 Litre, 500 ml, 250 ml, 100 ml",
     features: ["Premium combination", "Low dose", "Effective"]
   },
   {
@@ -489,7 +491,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Chemical",
     composition: "Dimethoate 30% EC",
-    image: "/src/assets/products/INSECTICIDE/Ragor.png",
+    image: "/assets/products/INSECTICIDE/Ragor.png",
     description: "Systemic and contact insecticide",
     targetPests: "Aphids, Jassids, Thrips, White fly",
     crops: "Cotton, Vegetables, Fruits",
@@ -503,12 +505,12 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Chlorpyriphos 10% GR",
-    image: "/src/assets/products/INSECTICIDE/CHLORO-10.PNG",
+    image: "/assets/products/INSECTICIDE/CHLORO-10.PNG",
     description: "Granular insecticide for soil pests",
     targetPests: "Root worm, Mites, Thrips, Black cut worms, Nematodes,Leaf beetle larva",
     crops: "Wheat, Maize, Potato, Soyabean, Oil Seed, Apple",
     dosage: "5–8 kg/acre",
-    packing: "1 kg, 5 kg",
+    packing: "1 kg, 5 kg",
     features: ["Soil application", "Long lasting", "Effective"]
   },
   {
@@ -517,7 +519,7 @@ export const products: Product[] = [
     category: "INSECTICIDE",
     subcategory: "Granular",
     composition: "Thiamethoxam 1% + Chlorantraniliprole 0.5% GR",
-    image: "/src/assets/products/INSECTICIDE/Yodha.PNG",
+    image: "/assets/products/INSECTICIDE/yodha.PNG",
     description: "Advanced combination granular insecticide",
     targetPests: "White grub & Termites",
     crops: "Groundnut, Sugarcane, Paddy, Potato",
@@ -525,7 +527,7 @@ export const products: Product[] = [
     packing: "5 kg",
     features: ["Dual action", "Low dose", "Long duration"]
   },
-  
+
   // FUNGICIDES
   {
     id: "right",
@@ -533,7 +535,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "AZOXYSTROBIN 18.2% W/W + DIFENOCONAZOLE 11.4% W/W SC",
-    image: "/src/assets/products/fungicide/RIGHT.PNG",
+    image: "/assets/products/fungicide/Right.PNG",
     description: "Systemic triazole fungicide",
     targetPests: "Blight, Powdery Mildew, Downy Mildew, Late Blight, Blast",
     crops: "Maize, Wheat, Tomato, Paddy, Chillies",
@@ -547,7 +549,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Hexaconazole 5% SC",
-    image: "/src/assets/products/fungicide/Express.png",
+    image: "/assets/products/fungicide/Express.png",
     description: "Systemic triazole fungicide",
     targetPests: "Rust, Tikka, Powdery mildew",
     crops: "Groundnut, Soybean, Wheat",
@@ -561,7 +563,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Carbendazim 12% + Mancozeb 63% WP",
-    image: "/src/assets/products/fungicide/Rambaan.png",
+    image: "/assets/products/fungicide/Rambaan.png",
     description: "Combination fungicide for broad spectrum control",
     targetPests: "Blast, Blight, Leaf spot",
     crops: "Rice, Vegetables, Fruits",
@@ -575,7 +577,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Carbendazim 50% WP",
-    image: "/src/assets/products/fungicide/R-STIN.PNG",
+    image: "/assets/products/fungicide/R-STIN.PNG",
     description: "Systemic fungicide with therapeutic action",
     targetPests: "Powdery mildew, Anthracnose, Wilt",
     crops: "All crops",
@@ -589,7 +591,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "HEXACONAZOLE 5% SC",
-    image: "/src/assets/products/fungicide/VIRAT SC.png",
+    image: "/assets/products/fungicide/Virat SC.png",
     description: "Premium triazole fungicide",
     targetPests: "Rust, Tikka, Powdery mildew, Sheath blight",
     crops: "Wheat, Rice, Groundnut",
@@ -603,12 +605,12 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Mancozeb 75% WP",
-    image: "/src/assets/products/fungicide/R-45.PNG",
+    image: "/assets/products/fungicide/R-45.PNG",
     description: "Broad spectrum contact fungicide",
     targetPests: "Early & Late Blight, Blast, Downy Mildew, Leaf Spot, Ramping off scab",
     crops: "Wheat, Maize, Paddy, Jowar, Potato, Tomato, Chillies, Onion, Groundnut",
     dosage: "500–800 g/acre",
-    packing: "1 kg, 500 g",
+    packing: "1 kg, 500 g",
     features: ["Contact action", "Broad spectrum", "Cost effective"]
   },
   {
@@ -617,7 +619,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Sulphur 80% WDG",
-    image: "/src/assets/products/fungicide/STAR SULF.jpeg",
+    image: "/assets/products/fungicide/STAR SULF.jpeg",
     description: "Contact fungicide and acaricide",
     targetPests: "Powdery mildew, Mites",
     crops: "Vegetables, Fruits, Pulses",
@@ -631,7 +633,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Tebuconazole 25.9% EC",
-    image: "/src/assets/products/fungicide/Tebular.png",
+    image: "/assets/products/fungicide/Tebular.png",
     description: "Premium combination fungicide",
     targetPests: "Sheath blight, Blast, Rust",
     crops: "Rice, Wheat",
@@ -645,7 +647,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "TEBUCONAZOLE 10% + SULPHUR 65% WG",
-    image: "/src/assets/products/fungicide/Defence.png",
+    image: "/assets/products/fungicide/Defence.png",
     description: "Systemic benzimidazole fungicide",
     targetPests: "Chilli, Soybean ,Anthracnose, Powdery mildew, Scab",
     crops: "Vegetables, Fruits",
@@ -653,28 +655,27 @@ export const products: Product[] = [
     packing: "100g, 250g, 500g, 1kg",
     features: ["Systemic", "Curative", "Preventive"]
   },
-    {
+  {
     id: "thipo",
     name: "THIPO",
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "THIOPHANATE METHYL 70% WP",
-    image: "/src/assets/products/fungicide/THIPO.jpeg",
+    image: "/assets/products/fungicide/THIPO.jpeg",
     description: "Systemic benzimidazole fungicide",
     targetPests: "Powdery Mildew, Scab, Rust, Blight, Anthracnose, Fusarium wilt",
     crops: " Papaya, Apple, Wheat, Tomato, Bottle gourd, Pigeon Pea, Cucurbits",
     dosage: "300–600 g/acre",
-    packing: "500 g, 250 g",
+    packing: "500 g, 250 g",
     features: ["Systemic", "Curative", "Preventive"]
   },
-
   {
     id: "maha-valida",
     name: "MAHA VALIDA",
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "VALIDAMYCIN 3% L",
-    image: "/src/assets/products/fungicide/Maha Valida.png",
+    image: "/assets/products/fungicide/Maha Valida.png",
     description: "Contact fungicide and bactericide",
     targetPests: "Sheath Blight, Downy mildew, Anthracnose",
     crops: " Paddy, Potato, Mustard, Groundnut Target",
@@ -682,13 +683,13 @@ export const products: Product[] = [
     packing: "250g, 500g, 1kg",
     features: ["Contact action", "Bactericidal", "Broad spectrum"]
   },
-   {
+  {
     id: "copper",
     name: "MAHA VALIDA",
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "COPPER OXYCHLORIDE 50% WP",
-    image: "/src/assets/products/fungicide/Copper.png",
+    image: "/assets/products/fungicide/Copper.png",
     description: "Contact fungicide and bactericide",
     targetPests: "Black Spot, Rust, Fire Blight & Bacterial Leaf Spot",
     crops: "Mango, Chilli, Apple, Grapes, Potato, Tomato & Citrus",
@@ -702,7 +703,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Propiconazole 25% EC",
-    image: "/src/assets/products/fungicide/Propina.png",
+    image: "/assets/products/fungicide/Propina.png",
     description: "Systemic triazole fungicide",
     targetPests: " Rust, Bunt, Sheath Blight & Leaf Spot",
     crops: "Wheat, Rice, Groundnut",
@@ -716,7 +717,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "Metalaxyl 8% + Mancozeb 64% WP",
-    image: "/src/assets/products/fungicide/META CURL.jpeg",
+    image: "/assets/products/fungicide/META CURL.jpeg",
     description: "Systemic and contact fungicide combination",
     targetPests: "Downy mildew, Late blight, Damping off",
     crops: "Grapes, Potato, Vegetables",
@@ -730,7 +731,7 @@ export const products: Product[] = [
     category: "FUNGICIDE",
     subcategory: "Chemical",
     composition: "METALAXYL 8% + MANCOZEB 64% WP",
-    image: "/src/assets/products/fungicide/META gold.PNG",
+    image: "/assets/products/fungicide/META gold.PNG",
     description: "Seed treatment and soil application fungicide",
     targetPests: "Late Blight, Black Shank, White Rust, Alt. Blight",
     crops: "Potato, Tobacco, Mustard, Grapes",
@@ -738,7 +739,7 @@ export const products: Product[] = [
     packing: "500gm",
     features: ["Seed treatment", "Systemic", "Long duration"]
   },
-  
+
   // HERBICIDES
   {
     id: "metro-58",
@@ -746,12 +747,12 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "2,4-D AMINE SALT 58% SL",
-    image: "/src/assets/products/HERBICIDE/METRO-58.jpeg",
+    image: "/assets/products/HERBICIDE/METRO-58.jpeg",
     description: "Pre-emergence herbicide for paddy",
     targetPests: "Grassy and broadleaf weeds",
     crops: "Wheat, Sorghum, Sugarcane and aquatic weeds and Non Cropped area",
     dosage: "400–600 ml/acre",
-    packing: "1 Litre, 400 ml",
+    packing: "1 Litre, 400 ml",
     features: ["Pre-emergence", "Broad spectrum", "Long duration"]
   },
   {
@@ -760,7 +761,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "2,4-D ETHYL ESTER 38% EC",
-    image: "/src/assets/products/HERBICIDE/metro-38.PNG",
+    image: "/assets/products/HERBICIDE/metro-38.PNG",
     description: "Emulsifiable water-based herbicide",
     targetPests: "Annual grasses and broadleaf weeds",
     crops: " Wheat, Sorghum, Sugarcane and aquatic weeds and Non Cropped area",
@@ -774,7 +775,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "Metribuzin 70% WP",
-    image: "/src/assets/products/HERBICIDE/R-metri.PNG",
+    image: "/assets/products/HERBICIDE/R-metri.PNG",
     description: "Selective herbicide for potato and soybean",
     targetPests: "Annual grasses and broadleaf weeds",
     crops: "Potato, Soybean, Wheat",
@@ -788,26 +789,12 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "Metribuzin 70% WP",
-    image: "/src/assets/products/HERBICIDE/Pretila.png",
+    image: "/assets/products/HERBICIDE/Pretila.png",
     description: "Selective herbicide for potato and soybean",
     targetPests: "Annual grasses and broadleaf weeds",
     crops: "Paddy",
     dosage: "400–600 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml",
-    features: ["Selective", "Pre-emergence", "Long control"]
-  },
-  {
-    id: "PRETILA-EW",
-    name: "PRETILACHLOR 37% EW",
-    category: "HERBICIDE",
-    subcategory: "Pre-emergence",
-    composition: "Metribuzin 70% WP",
-    image: "/src/assets/products/HERBICIDE/Pretila.png",
-    description: "Selective herbicide for potato and soybean",
-    targetPests: "Annual grasses and broadleaf weeds",
-    crops: "Paddy",
-    dosage: "400–600 ml/acre",
-    packing: "1 Litre, 500 ml, 250 ml",
+    packing: "1 Litre, 500 ml, 250 ml",
     features: ["Selective", "Pre-emergence", "Long control"]
   },
   {
@@ -816,7 +803,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "METSLUFURON METHYL 20% WP",
-    image: "/src/assets/products/HERBICIDE/Matgrip.png",
+    image: "/assets/products/HERBICIDE/Matgrip.png",
     description: "Pre-emergence herbicide for rice",
     targetPests: "Grassy weeds and some broadleaf weeds",
     crops: "Direct seeded and transplanted rice",
@@ -830,7 +817,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "GLYPHOSATE 41% SL",
-    image: "/src/assets/products/HERBICIDE/Fast clean.PNG",
+    image: "/assets/products/HERBICIDE/Fast clean.PNG",
     description: "Selective post-emergence grass herbicide",
     targetPests: "Annual and perennial grasses",
     crops: "Soybean, Groundnut, Cotton",
@@ -844,7 +831,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "AMMONIUM SALT OF GLYPHOSATE 71% SG",
-    image: "/src/assets/products/HERBICIDE/MAHA 71.png",
+    image: "/assets/products/HERBICIDE/Maha 71.png",
     description: "Pre and early post-emergence herbicide",
     targetPests: "Broadleaf weeds",
     crops: "Onion, Garlic, Rice, Sugarcane",
@@ -858,7 +845,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "PARAQUATE DICHLORIDE 24% SL",
-    image: "/src/assets/products/HERBICIDE/AMQUATI.jpeg",
+    image: "/assets/products/HERBICIDE/AMQUATI.jpeg",
     description: "Non-selective contact herbicide",
     targetPests: "Annual and perennial weeds",
     crops: "Orchards, Tea gardens",
@@ -872,7 +859,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Pre-emergence",
     composition: "Atrazine 50% WP",
-    image: "/src/assets/products/HERBICIDE/R-Atra.PNG",
+    image: "/assets/products/HERBICIDE/R-Atra.PNG",
     description: "Pre-emergence herbicide for maize and sugarcane",
     targetPests: "Broadleaf and grass weeds",
     crops: "Maize, Sugarcane, Sorghum",
@@ -886,26 +873,26 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Clodinafop Propargyl 15% WP",
-    image: "/src/assets/products/HERBICIDE/Tip Top.png",
+    image: "/assets/products/HERBICIDE/Tip Top.png",
     description: "Selective systemic herbicide",
     targetPests: "Broadleaf weeds",
     crops: "Wheat, Maize, Sugarcane, Rice",
     dosage: "160 gm / acre",
-    packing: "160 gm",
+    packing: "160 gm",
     features: ["Selective", "Broadleaf control", "Systemic"]
   },
- {
+  {
     id: "HANK",
     name: "HANK",
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Bispyribac Sodium 10% SC",
-    image: "/src/assets/products/HERBICIDE/HANK.PNG",
+    image: "/assets/products/HERBICIDE/HANK.PNG",
     description: "Selective systemic herbicide",
     targetPests: "Broadleaf weeds",
     crops: "Wheat, Maize, Sugarcane, Rice",
     dosage: "160 gm / acre",
-    packing: "100 ml, 200 ml, 500 ml",
+    packing: "100 ml, 200 ml, 500 ml",
     features: ["Selective", "Broadleaf control", "Systemic"]
   },
   {
@@ -914,7 +901,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Quizalofop Ethyl 5% EC",
-    image: "/src/assets/products/HERBICIDE/targett.PNG",
+    image: "/assets/products/HERBICIDE/targett.PNG",
     description: "Pre-emergence herbicide for cotton and rice",
     targetPests: "Annual grasses and broadleaf weeds",
     crops: " Soybean, Tea, Cotton, Groundnut, Black Gram and Onion",
@@ -928,7 +915,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Sulfosulfuron 75% WG",
-    image: "/src/assets/products/HERBICIDE/Supreme.PNG",
+    image: "/assets/products/HERBICIDE/supreme.PNG",
     description: "Selective grass herbicide",
     targetPests: "Grass weeds",
     crops: "Wheat, Rice",
@@ -942,7 +929,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Metsulfuron Methyl 10% w/w + Chlormuron Ethyl 10% WP",
-    image: "/src/assets/products/HERBICIDE/MEt mix.PNG",
+    image: "/assets/products/HERBICIDE/MEt mix.PNG",
     description: "Selective broadleaf herbicide",
     targetPests: "Broadleaf weeds",
     crops: "Wheat, Rice",
@@ -951,12 +938,12 @@ export const products: Product[] = [
     features: ["Low dose", "Selective", "Effective"]
   },
   {
-    id: "cleen-sweep",
-    name: "CLEEN SWEEP",
+    id: "clean-sweep",
+    name: "CLEAN SWEEP",
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Pendimethlin 30% EC",
-    image: "/src/assets/products/HERBICIDE/Clean sweap.PNG",
+    image: "/assets/products/HERBICIDE/Clean Sweap.PNG",
     description: "Post-emergence herbicide for rice",
     targetPests: "Grassy and broadleaf weeds",
     crops: "Transplanted rice",
@@ -970,7 +957,7 @@ export const products: Product[] = [
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Pendimethlin 38.7% CS",
-    image: "/src/assets/products/HERBICIDE/Maha Pendi.png",
+    image: "/assets/products/HERBICIDE/Maha Pendi.png",
     description: "Post-emergence herbicide for rice",
     targetPests: "Sedges and broadleaf weeds",
     crops: "Transplanted rice",
@@ -978,13 +965,13 @@ export const products: Product[] = [
     packing: "50ml, 100ml, 250ml",
     features: ["Low dose", "Effective on sedges", "Safe"]
   },
-    {
+  {
     id: "CONTROL",
     name: "CONTROL",
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "Pyrazosulfuron Ethyl 10% WP",
-    image: "/src/assets/products/HERBICIDE/Maha Pendi.png",
+    image: "/assets/products/HERBICIDE/Control.PNG",
     description: "Post-emergence herbicide for rice",
     targetPests: "Sedges and broadleaf weeds",
     crops: "Transplanted rice",
@@ -992,8 +979,7 @@ export const products: Product[] = [
     packing: "50ml, 100ml, 250ml",
     features: ["Low dose", "Effective on sedges", "Safe"]
   },
-  
-  
+
   // PGR (Plant Growth Regulators)
   {
     id: "BLACK GOLD",
@@ -1001,84 +987,79 @@ export const products: Product[] = [
     category: "PGR",
     subcategory: "Organic",
     composition: "HUMIC ACID",
-    image: "/src/assets/products/PGR/Black Gold.jpeg",
+    image: "/assets/products/PGR/Black Gold.jpeg",
     description: "Empowered by our levels of exquisite professionals, we are engaged in offering a wide grade of Yield Enhancer. The offered yield enhancer is processed using quality tested chemical compounds and advanced technology. Moreover, this is used to promote the growth of",
     crops: "All crops",
     dosage: "500–1 Kg / Acre",
     packing: "500gm",
     features: ["Organic", "Growth enhancer", "Natural"]
   },
-    {
+  {
     id: "dhoom",
     name: "DHOOM",
     category: "PGR",
     subcategory: "Organic",
     composition: "SEAWID",
-    image: "/src/assets/products/PGR/Dhoom.jpeg",
+    image: "/assets/products/PGR/Dhoom.jpeg",
     description: "Empowered by our levels of exquisite professionals, we are engaged in offering a wide grade of Yield Enhancer. The offered yield enhancer is processed using quality tested chemical compounds and advanced technology. Moreover, this is used to promote the growth of",
     crops: "All crops",
     dosage: "250–500 gm / Acre",
     packing: "500gm",
     features: ["Organic", "Growth enhancer", "Natural"]
   },
-
-
   {
     id: "turbo-G",
     name: "TURBO-G",
     category: "PGR",
     subcategory: "Chemical",
     composition: "GIBBERELLIC ACID 0.001% L",
-    image: "/src/assets/products/PGR/TURBO-G.jpeg",
+    image: "/assets/products/PGR/TURBO-G.jpeg",
     description: "Advanced plant growth regulator",
     crops: "Wheat, Paddy, Cotton, Sugarcane, Groundnut, Brinjal, Bhindi, Grapes",
     dosage: "250 ml – 500 ml / acre",
     packing: "250ml, 500ml",
     features: ["Advanced formula", "Effective", "Safe"]
   },
-  
   {
     id: "turbo power",
     name: "TURBO-POWER",
     category: "PGR",
     subcategory: "Chemical",
     composition: "GIBBERELLIC ACID 0.001% L",
-    image: "/src/assets/products/PGR/TURBO-G.jpeg",
+    image: "/assets/products/PGR/TURBO-G.jpeg",
     description: "Advanced plant growth regulator",
     crops: "Wheat, Paddy, Cotton, Sugarcane, Groundnut, Brinjal, Bhindi, Grapes",
     dosage: "250 ml – 500 ml / acre",
-    packing: " 1 Ltr, 500 ml, 250 ml",
+    packing: " 1 Ltr, 500 ml, 250 ml",
     features: ["Advanced formula", "Effective", "Safe"]
   },
-
   {
     id: "green-gold",
     name: "GREEN GOLD",
     category: "PGR",
     subcategory: "Organic",
     composition: "Seaweed Extract",
-    image: "/src/assets/products/PGR/Green Gold.png",
+    image: "/assets/products/PGR/Green Gold.png",
     description: "Natural seaweed based bio-stimulant",
     crops: "All crops",
     dosage: "5–10 kg/acre",
-    packing: "5 kg, 8 kg",
+    packing: "5 kg, 8 kg",
     features: ["Seaweed extract", "Bio-stimulant", "Organic"]
   },
-
   {
     id: "qataar",
     name: "qataar",
     category: "PGR",
     subcategory: "Chemical",
     composition: "PACLOBUTRAZOL 23% SC",
-    image: "/src/assets/products/PGR/QATAAR.jpeg",
+    image: "/assets/products/PGR/QATAAR.jpeg",
     description: "Plant growth promoter",
     crops: "Mango, Rice, Sugarcane",
     dosage: "15 ml–30 ml/acre",
-    packing: "1 Ltr, 500 ml",
+    packing: "1 Ltr, 500 ml",
     features: ["Growth promoter", "Effective", "Safe"]
   },
-  
+
   // FERTILIZERS
   {
     id: "TAAQAT",
@@ -1086,7 +1067,7 @@ export const products: Product[] = [
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Triacontanol 0.05% GR",
-    image: "/src/assets/products/FERTILIZER/TAAQAT.PNG",
+    image: "/assets/products/FERTILIZER/TAAQAT.PNG",
     description: "Specialized micronutrient fertilizer for sugarcane and other crops",
     crops: "Paddy, Pulses, Vegetables, Sugarcane",
     dosage: "5–8 kg/acre",
@@ -1099,11 +1080,11 @@ export const products: Product[] = [
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Triacontanol 0.1% EW",
-    image: "/src/assets/products/FERTILIZER/CHAMTKAR-EW.PNG",
+    image: "/assets/products/FERTILIZER/CHAMTKAR-EW.PNG",
     description: "Iron supplement for crops",
     crops: "Sugarcane, Paddy, Pulses, Vegetables",
     dosage: "5kg-10kg/acre",
-    packing: " 1 Ltr, 500 ml, 250 ml",
+    packing: " 1 Ltr, 500 ml, 250 ml",
     features: ["Iron source", "Greenness", "Yield increase"]
   },
   {
@@ -1112,104 +1093,98 @@ export const products: Product[] = [
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Sulphur 90% WP",
-    image: "/src/assets/products/FERTILIZER/Crop Master.png",
+    image: "/assets/products/FERTILIZER/Crop Master.png",
     description: "High concentration sulphur fertilizer",
     crops: "All crops",
     dosage: "2–5 ml/ltr",
     packing: "5kg",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
-    {
+  {
     id: "JAI HO",
     name: "JAI HO",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Sulphur 90% WP",
-    image: "/src/assets/products/FERTILIZER/JAI HO.jpeg",
+    image: "/assets/products/FERTILIZER/JAI HO.jpeg",
     description: "High concentration sulphur fertilizer",
     crops: "All crops",
     dosage: "2–5 ml/ltr",
     packing: "5kg",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
-    {
+  {
     id: "BLOOM-35",
     name: "BLOOM-35",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Sulphur 90% WP",
-    image: "/src/assets/products/FERTILIZER/BLOOM-35.PNG",
+    image: "/assets/products/FERTILIZER/BLOOM-35.PNG",
     description: "High concentration sulphur fertilizer",
     crops: "Cotton, Tomato, Chilli, Soyabean, Mustard, Wheat, Rice",
     dosage: "1–3 kg/acre",
     packing: "5kg",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
-    {
+  {
     id: "BLOOM-40",
     name: "BLOOM-40",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Sulphur 90% WP",
-    image: "/src/assets/products/FERTILIZER/BLOOM-40.PNG",
+    image: "/assets/products/FERTILIZER/BLOOM-40.PNG",
     description: "High concentration sulphur fertilizer",
     crops: "Cotton, Tomato, Chilli, Soyabean, Mustard, Wheat, Rice",
     dosage: "2–5 ml/ltr",
-    packing: " 1 Ltr, 500 ml, 250 m",
+    packing: " 1 Ltr, 500 ml, 250 m",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
   {
-
     id: "SUGAR CANE SPECIAL",
     name: "SUGAR CANE SPECIAL",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "MICRONUTRIENT 6%, 10%",
-    image: "/src/assets/products/FERTILIZER/SUGAR CANE SPECIAL.jpeg",
+    image: "/assets/products/FERTILIZER/SUGAR CANE SPECIAL.jpeg",
     description: "High concentration sulphur fertilizer",
     crops: "Cotton, Tomato, Chilli, Soyabean, Mustard, Wheat, Rice",
     dosage: "2–5 ml/ltr",
-    packing: " 1 Ltr, 500 ml, 250 m",
+    packing: " 1 Ltr, 500 ml, 250 m",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
-    {
-
+  {
     id: "FERRO PLUS",
     name: "FERRO PLUS",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "FERROUS SULPHATE",
-    image: "/src/assets/products/FERTILIZER/FERROUS SULPHATE.jpeg",
+    image: "/assets/products/FERTILIZER/FERROUS SULPHATE.jpeg",
     description: "High concentration sulphur fertilizer",
     crops: "Cotton, Tomato, Chilli, Soyabean, Mustard, Wheat, Rice",
     dosage: "2–5 ml/ltr",
-    packing: " 10 kg",
+    packing: " 10 kg",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
-   {
-
+  {
     id: "ROLEX CALCIUM CHLORIDE",
     name: "ROLEX CALCIUM CHLORIDE",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "CALCIUM CHLORIDE",
-    image: "/src/assets/products/FERTILIZER/ROLEX CALCIUM CHLORIDE.jpeg",
+    image: "/assets/products/FERTILIZER/ROLEX CALCIUM CHLORIDE.jpeg",
     description: "High concentration sulphur fertilizer",
     crops: "Cotton, Tomato, Chilli, Soyabean, Mustard, Wheat, Rice",
     dosage: "2–5 ml/ltr",
-    packing: " 1 kg",
+    packing: " 1 kg",
     features: ["High sulphur", "Greenness", "Yield improvement"]
   },
-
-
- 
   {
     id: "rolex-calcium-nitrate",
     name: "ROLEX CALCIUM NITRATE",
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Calcium Nitrate",
-    image: "/src/assets/products/FERTILIZER/ROOT2FRUIT(ROLEX CALCIUM NITRATE).png",
+    image: "/assets/products/FERTILIZER/ROOT2FRUIT(ROLEX CALCIUM NITRATE).png",
     description: "Water soluble calcium and nitrogen source",
     crops: "Sugarcane, Paddy, Pulses, Vegetables",
     dosage: "2.8-25kg/acre",
@@ -1222,16 +1197,14 @@ export const products: Product[] = [
     category: "FERTILIZER",
     subcategory: "Micronutrient",
     composition: "Zinc Sulphate Monohydrate 33%",
-    image: "/src/assets/products/FERTILIZER/Mono ZINC 33.png",
+    image: "/assets/products/FERTILIZER/Mono ZINC 33.png",
     description: "High concentration zinc fertilizer",
     crops: "Sugarcane, Cotton, Oil Seeds, Pulses, Cereals, Fruits, Vegetables, Flowers",
     dosage: "4-5kg/acre",
     packing: "5kg",
     features: ["Zinc source", "Green color", "Yield increase"]
   },
- 
-  
-  
+
   // SPREADER & ANTIBIOTECH
   {
     id: "TRACKER",
@@ -1239,11 +1212,11 @@ export const products: Product[] = [
     category: "SPREADER & ANTIBIOTECH",
     subcategory: "Organic",
     composition: "Humic Acid 98%",
-    image: "/src/assets/products/SPREADER & ANTIBIOTECH/Tracker.png",
+    image: "/assets/products/SPREADER & ANTIBIOTECH/Tracker.png",
     description: "Soil conditioner and growth enhancer",
     crops: "Paddy, Sugarcane, Cotton, Wheat, Groundnut, Banana, Tomato, Potato, Cabbage, Cauliflower, Grapes, Brinjal, Bhindi, Tea",
     dosage: "25–50 ml / 100 litre water",
-    packing: "500 ml, 250 ml, 100 ml, 50 ml",
+    packing: "500 ml, 250 ml, 100 ml, 50 ml",
     features: ["Soil conditioner", "Organic", "Growth enhancer"]
   },
   {
@@ -1252,7 +1225,7 @@ export const products: Product[] = [
     category: "SPREADER & ANTIBIOTECH",
     subcategory: "Organic",
     composition: "SURFACTANT",
-    image: "/src/assets/products/SPREADER & ANTIBIOTECH/Agro 90.png",
+    image: "/assets/products/SPREADER & ANTIBIOTECH/Agro 90.png",
     description: "Amino acid based growth promoter",
     crops: "All crops",
     dosage: "As recommended",
@@ -1265,7 +1238,7 @@ export const products: Product[] = [
     category: "SPREADER & ANTIBIOTECH",
     subcategory: "Antibiotic",
     composition: "Streptomycin Sulphate + Tetracycline HYDROCHLORIDE 9:1",
-    image: "/src/assets/products/SPREADER & ANTIBIOTECH/Streptomycin.PNG",
+    image: "/assets/products/SPREADER & ANTIBIOTECH/Streptomycin.PNG",
     description: "Antibacterial for plant diseases",
     crops: "All crops",
     dosage: "As recommended",
@@ -1278,13 +1251,13 @@ export const products: Product[] = [
     category: "SPREADER & ANTIBIOTECH",
     subcategory: "Antibiotic",
     composition: "Plant Antibiotic",
-    image: "/src/assets/products/SPREADER & ANTIBIOTECH/Bectiron.png",
+    image: "/assets/products/SPREADER & ANTIBIOTECH/Bectiron.png",
     description: "Antibacterial and antifungal",
     crops: "All crops",
     dosage: "As recommended",
     packing: "50g, 100g",
     features: ["Dual action", "Bacterial + Fungal", "Effective"]
-  },
+  }
 ];
 
 export const categories = [

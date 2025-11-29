@@ -1,11 +1,12 @@
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-woman-garden.png";
+
+// Image now loaded from public/assets
+const heroImage = "/assets/hero-woman-garden.png";
 
 const HeroNew = () => {
   return (
     <section className="relative h-[600px] md:h-[700px] flex items-center overflow-hidden">
-      {/* 1. Importing a captivating font (Playfair Display) directly here */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
@@ -31,12 +32,6 @@ const HeroNew = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="max-w-3xl animate-fade-in-up">
-          
-          {/* UPDATED HEADING:
-              - Used 'font-heading-custom' class defined above
-              - Added 'italic' to the second word for style
-              - Kept the size manageable (text-5xl to 7xl)
-          */}
           <h1 className="font-heading-custom text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-2xl">
             CULTIVATING
             <br />

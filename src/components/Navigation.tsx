@@ -2,7 +2,9 @@ import { Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
-import logo from "@/assets/rolex-logo.png";
+
+// logo now in public/assets
+const logoPath = "/assets/rolex-logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +19,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src={logo} 
+              src={logoPath}
               alt="Rolex new biotech" 
               className="h-16 w-auto transition-transform duration-300 group-hover:scale-105" 
             />
@@ -64,7 +66,7 @@ const Navigation = () => {
               <Search className="h-5 w-5" />
             </Button>
             
-            {/* Desktop CTA Linked to Contact Page */}
+            {/* Desktop CTA */}
             <Link to="/contact">
               <Button className="hidden md:flex bg-lime-accent hover:bg-lime-accent/90 text-primary group relative overflow-hidden shadow-lg">
                 <span className="relative z-10 font-semibold">Get A Quote</span>
@@ -117,7 +119,6 @@ const Navigation = () => {
                 Contact
               </Link>
               
-              {/* Mobile CTA Linked to Contact Page */}
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button className="w-full bg-lime-accent hover:bg-lime-accent/90 text-primary group relative overflow-hidden">
                   <span className="relative z-10 font-semibold">Get A Quote</span>

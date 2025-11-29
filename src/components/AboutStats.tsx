@@ -1,11 +1,11 @@
 import React from "react";
 import { Check, Leaf } from "lucide-react";
 
-// Ensure these paths match your folder structure
-import gardeningImg from "../assets/about-gardening.jpg"; 
-import manGardeningImg from "../assets/about-man-gardening.jpg";
-import womanPortraitImg from "../assets/about-woman-portrait.jpg"; // Restored for the grid
-import profilePic from "../assets/profile.jpeg"; // Founder's Image
+// All images now come from public/assets folder
+const gardeningImg = "/assets/about-gardening.jpg";
+const manGardeningImg = "/assets/about-man-gardening.jpg";
+const womanPortraitImg = "/assets/about-woman-portrait.jpg";
+const profilePic = "/assets/profile.jpeg";
 
 const services = [
   "Certified Bio-Fertilizers",
@@ -17,10 +17,10 @@ const AboutStats = () => {
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left: Image Grid with Stats */}
           <div className="grid grid-cols-2 gap-4 animate-fade-in-up">
-            
+
             {/* Top Left - Large Image */}
             <div className="col-span-1 row-span-2">
               <div className="relative h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -38,7 +38,7 @@ const AboutStats = () => {
               <div className="text-sm text-center opacity-90">Years Experience</div>
             </div>
 
-            {/* Middle Right - Field Worker */}
+            {/* Middle Right */}
             <div className="row-span-2">
               <div className="relative h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <img
@@ -49,7 +49,7 @@ const AboutStats = () => {
               </div>
             </div>
 
-            {/* Bottom Left - Team/Stock Portrait (Restored) */}
+            {/* Bottom Left */}
             <div className="row-span-2">
               <div className="relative h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <img
@@ -87,15 +87,16 @@ const AboutStats = () => {
             </h2>
 
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Rolex New Biotech is committed to a highly productive and progressive vision of making farmers prosperous. We introduce our Company Rolex New Biotech, as a professionally managed micro nutrients & bio fertilizer company. We follow strict quality management systems and emerged as one of the leading manufacturers, exporters, and suppliers of Plant Growth Regulators, Bio Pesticides, and Organic Zyme Granules. Our aim is to provide our customers the best products and technical services at economical prices.
+              Rolex New Biotech is committed to a highly productive and progressive vision of making farmers prosperous.
+              We introduce our Company Rolex New Biotech, as a professionally managed micro nutrients & bio fertilizer
+              company. We follow strict quality management systems and emerged as one of the leading manufacturers,
+              exporters, and suppliers of Plant Growth Regulators, Bio Pesticides, and Organic Zyme Granules. Our aim is
+              to provide our customers the best products and technical services at economical prices.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 group"
-                >
+                <div key={index} className="flex items-center space-x-3 group">
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                     <Check className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                   </div>
@@ -106,33 +107,36 @@ const AboutStats = () => {
               ))}
             </div>
 
-            {/* FOUNDER SECTION: Circle Photo + Name + Signature */}
+            {/* Founder Section */}
             <div className="flex items-center space-x-5 pt-6 border-t border-border">
-              
-              {/* 1. Circle Photo */}
+
+              {/* Founder Image */}
               <div className="relative shrink-0">
-                <img 
-                  src={profilePic} 
-                  alt="Mr. Rajesh Kumar" 
+                <img
+                  src={profilePic}
+                  alt="Mr. Bhupendra Kumar Singh"
                   className="w-16 h-16 rounded-full object-cover border-2 border-background shadow-md hover:scale-105 transition-transform duration-300"
                 />
-                 {/* Optional check badge */}
                 <div className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-1 border-2 border-background">
-                   <Check className="w-3 h-3" />
+                  <Check className="w-3 h-3" />
                 </div>
               </div>
 
-              {/* 2. Name & Title */}
+              {/* Founder Name */}
               <div>
-                <h4 className="font-bold text-foreground text-lg leading-none mb-1">Mr. BHUPENDRA KUAMR SINGH</h4>
-                <span className="text-sm text-primary font-medium tracking-wide">FOUNDER & CHAIRMAN</span>
+                <h4 className="font-bold text-foreground text-lg leading-none mb-1">
+                  Mr. BHUPENDRA KUAMR SINGH
+                </h4>
+                <span className="text-sm text-primary font-medium tracking-wide">
+                  FOUNDER & CHAIRMAN
+                </span>
               </div>
 
-              {/* 3. Decorative Signature (Optional visual element) */}
+              {/* Signature */}
               <div className="hidden sm:block ml-auto opacity-40 text-muted-foreground">
-                 <svg width="100" height="40" viewBox="0 0 100 40">
-                   <path d="M5,30 Q25,5 50,30 T95,20" fill="none" stroke="currentColor" strokeWidth="2" />
-                 </svg>
+                <svg width="100" height="40" viewBox="0 0 100 40">
+                  <path d="M5,30 Q25,5 50,30 T95,20" fill="none" stroke="currentColor" strokeWidth="2" />
+                </svg>
               </div>
 
             </div>

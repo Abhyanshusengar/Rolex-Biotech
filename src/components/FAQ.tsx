@@ -66,7 +66,7 @@ const FAQ = () => {
           {/* Image Section */}
           <div className="relative rounded-2xl overflow-hidden h-[600px] order-2 lg:order-1">
             <img
-              src="/src/assets/about-woman-portrait.jpg"
+              src="/assets/about-woman-portrait.jpg"
               alt="Agricultural professional"
               className="w-full h-full object-cover"
             />

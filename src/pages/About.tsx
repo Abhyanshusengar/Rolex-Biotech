@@ -6,10 +6,19 @@ import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Users, Leaf, Target, Microscope, CheckCircle2, Sprout, Globe, Quote } from "lucide-react";
+import {
+  Award,
+  Users,
+  Leaf,
+  Target,
+  Microscope,
+  CheckCircle2,
+  Sprout,
+  Globe,
+  Quote,
+} from "lucide-react";
 
-// FIXED: Updated extension to .jpeg and used relative path
-import profilePic from "../assets/profile.jpeg"; 
+// CHANGED → Removed import, now using /assets/profile.jpeg directly
 
 // Animation Variants
 const fadeInUp = {
@@ -29,28 +38,32 @@ const values = [
   {
     icon: Leaf,
     title: "Sustainability",
-    description: "Improved rural livelihoods and sustainable food systems in the global South.",
+    description:
+      "Improved rural livelihoods and sustainable food systems in the global South.",
     color: "text-green-500",
     bg: "bg-green-500/10",
   },
   {
     icon: Award,
     title: "Quality First",
-    description: "Every product undergoes rigorous testing to ensure the highest standards of excellence.",
+    description:
+      "Every product undergoes rigorous testing to ensure the highest standards of excellence.",
     color: "text-blue-500",
     bg: "bg-blue-500/10",
   },
   {
     icon: Users,
     title: "Customer Focus",
-    description: "Respect and value for local knowledge, innovations, and the environment.",
+    description:
+      "Respect and value for local knowledge, innovations, and the environment.",
     color: "text-orange-500",
     bg: "bg-orange-500/10",
   },
   {
     icon: Target,
     title: "Innovation",
-    description: "Promoting agroecological principles and rural entrepreneurship through development.",
+    description:
+      "Promoting agroecological principles and rural entrepreneurship through development.",
     color: "text-purple-500",
     bg: "bg-purple-500/10",
   },
@@ -63,7 +76,6 @@ const stats = [
   { value: "ISO", label: "9001:2015 Certified", icon: Award },
 ];
 
-// Helper for stats icon
 function ClockIcon(props: any) {
   return (
     <svg
@@ -109,12 +121,22 @@ const About = () => {
               <Award className="w-4 h-4" />
               <span>ISO 9001:2015 Certified Company</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight">
-              Cultivating the <span className="text-primary relative">
+              Cultivating the{" "}
+              <span className="text-primary relative">
                 Future
-                <svg className="absolute w-full h-3 -bottom-1 left-0 text-lime-accent opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
+                <svg
+                  className="absolute w-full h-3 -bottom-1 left-0 text-lime-accent opacity-50"
+                  viewBox="0 0 100 10"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0 5 Q 50 10 100 5"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    fill="none"
+                  />
                 </svg>
               </span>
             </h1>
@@ -135,7 +157,7 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-12 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pattern-grid-lg" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
@@ -155,7 +177,9 @@ const About = () => {
                   <div className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
                     {stat.value}
                   </div>
-                  <div className="text-primary-foreground/80 font-medium">{stat.label}</div>
+                  <div className="text-primary-foreground/80 font-medium">
+                    {stat.label}
+                  </div>
                 </motion.div>
               );
             })}
@@ -167,9 +191,8 @@ const About = () => {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            {/* Left Col: Founder Image & Identity */}
-            <motion.div 
+            {/* Founder Image */}
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -177,36 +200,38 @@ const About = () => {
               className="lg:col-span-5 relative"
             >
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] group">
-                {/* Image */}
-                <img 
-                  src={profilePic}
-                  alt="Founder Mr. Rajesh Kumar"
+                {/* UPDATED → using public path */}
+                <img
+                  src="/assets/profile.jpeg"
+                  alt="Founder"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
-                {/* Gradient Overlay */}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
-                
-                {/* Name Tag */}
+
                 <div className="absolute bottom-0 left-0 w-full p-8 text-white z-20">
                   <div className="bg-primary/90 backdrop-blur-md inline-block px-4 py-1 rounded-full text-xs font-bold mb-3">
                     VISIONARY LEADERSHIP
                   </div>
-                  <h3 className="text-3xl font-bold mb-1">Mr. BHUPENDRA KUMAR SINGH</h3>
-                  <p className="text-white/80 font-medium text-lg">Founder & Chairman</p>
+                  <h3 className="text-3xl font-bold mb-1">
+                    Mr. BHUPENDRA KUMAR SINGH
+                  </h3>
+                  <p className="text-white/80 font-medium text-lg">
+                    Founder & Chairman
+                  </p>
                   <p className="mt-4 text-white/70 text-sm italic border-l-2 border-primary pl-3">
-                    "Our mission is not just to sell products, but to cultivate a legacy of trust with every farmer in India."
+                    "Our mission is not just to sell products, but to cultivate
+                    a legacy of trust with every farmer in India."
                   </p>
                 </div>
               </div>
-              
-              {/* Decorative elements behind image */}
+
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-xl -z-10" />
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-lime-accent/20 rounded-full blur-xl -z-10" />
             </motion.div>
 
-            {/* Right Col: Story & Highlights */}
-            <motion.div 
+            {/* STORY TEXT */}
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -217,54 +242,65 @@ const About = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                   Our <span className="text-primary">Story</span>
                 </h2>
+
                 <div className="prose prose-lg text-muted-foreground space-y-6 mb-10">
                   <p>
-                    Rolex New Biotech is a professionally managed leader in micro-nutrients and bio-fertilizers. As an ISO 9001:2015 certified entity, we specialize in manufacturing, trading, and importing a vast array of agricultural solutions—from Plant Growth Regulators to Bio-Pesticides.
+                    Rolex New Biotech is a professionally managed leader in
+                    micro-nutrients and bio-fertilizers. As an ISO 9001:2015
+                    certified entity, we specialize in manufacturing, trading,
+                    and importing a vast array of agricultural solutions—from
+                    Plant Growth Regulators to Bio-Pesticides.
                   </p>
+
                   <p>
-                    Our state-of-the-art facility in <strong>Sikandrabad, Buland Sahar</strong>, is the heart of our innovation. Here, traditional farming wisdom meets cutting-edge science. We are equipped with advanced technology and sophisticated machinery, managed by a team of experienced technocrats and industry experts.
+                    Our state-of-the-art facility in{" "}
+                    <strong>Sikandrabad, Buland Sahar</strong>, is the heart of
+                    our innovation.
                   </p>
+
                   <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-xl border border-border">
                     <Quote className="w-8 h-8 text-primary/40 flex-shrink-0" />
                     <p className="italic text-foreground/80 text-base">
-                      "We exercise flexible and open-door business policies that help us listen to our esteemed customers' suggestions and continuously improve."
+                      "We exercise flexible and open-door business policies that
+                      help us listen to our esteemed customers' suggestions and
+                      continuously improve."
                     </p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Highlights Grid */}
+              {/* Highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                 {[
+                {[
                   {
                     title: "Advanced Manufacturing",
                     desc: "State-of-the-art unit equipped with sophisticated machinery.",
-                    icon: Microscope
+                    icon: Microscope,
                   },
                   {
                     title: "Global Standards",
                     desc: "ISO 9001:2015 certified processes and quality control.",
-                    icon: Globe
+                    icon: Globe,
                   },
                   {
                     title: "Product Diversity",
                     desc: "From Humic Acid to Bio Insecticides, we cover it all.",
-                    icon: Sprout
-                  }
+                    icon: Sprout,
+                  },
                 ].map((item, idx) => (
-                  <motion.div 
-                    key={idx} 
-                    variants={fadeInUp}
-                    className={idx === 2 ? "sm:col-span-2" : ""}
-                  >
+                  <motion.div key={idx} variants={fadeInUp}>
                     <Card className="border-none shadow-sm bg-card hover:bg-card/80 transition-colors duration-300 h-full">
                       <CardContent className="p-5 flex items-start gap-3">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
                           <item.icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
-                          <p className="text-muted-foreground text-sm leading-tight mt-1">{item.desc}</p>
+                          <h3 className="text-lg font-bold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="text-muted-foreground text-sm leading-tight mt-1">
+                            {item.desc}
+                          </p>
                         </div>
                       </CardContent>
                     </Card>
@@ -276,12 +312,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Values */}
       <section className="py-24 bg-muted/30 relative">
-         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -292,11 +328,12 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do and every product we create.
+              The principles that guide everything we do and every product we
+              create.
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -307,15 +344,19 @@ const About = () => {
               const Icon = value.icon;
               return (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card
-                    className="h-full border-none shadow-lg bg-card hover:-translate-y-2 transition-transform duration-300"
-                  >
+                  <Card className="h-full border-none shadow-lg bg-card hover:-translate-y-2 transition-transform duration-300">
                     <CardContent className="p-8 text-center h-full flex flex-col items-center">
-                      <div className={`w-16 h-16 rounded-2xl ${value.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <div
+                        className={`w-16 h-16 rounded-2xl ${value.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                      >
                         <Icon className={`w-8 h-8 ${value.color}`} />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
+                      <h3 className="text-xl font-bold text-foreground mb-3">
+                        {value.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {value.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -324,24 +365,24 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-      
-      {/* Bottom CTA */}
+
+      {/* CTA */}
       <section className="py-20 border-t border-border">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to grow with us?</h2>
           <div className="flex flex-wrap justify-center gap-4">
-             <div className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span>Trusted Quality</span>
-             </div>
-             <div className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span>Expert Support</span>
-             </div>
-             <div className="flex items-center gap-2 text-muted-foreground">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span>Best Prices</span>
-             </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <CheckCircle2 className="w-5 h-5 text-primary" />
+              <span>Trusted Quality</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <CheckCircle2 className="w-5 h-5 text-primary" />
+              <span>Expert Support</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <CheckCircle2 className="w-5 h-5 text-primary" />
+              <span>Best Prices</span>
+            </div>
           </div>
         </div>
       </section>
