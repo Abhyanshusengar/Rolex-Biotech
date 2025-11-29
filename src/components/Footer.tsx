@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6">
               <img
-                src="/assets/logo.png"   // 👈 PUBLIC PATH, NO IMPORT
+                src="/assets/rolex-logo.png"   // 👈 PUBLIC PATH, NO IMPORT
                 alt="Rolex new biotech"
                 className="h-16 w-auto"
               />
