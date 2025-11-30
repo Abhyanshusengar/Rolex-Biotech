@@ -59,10 +59,11 @@ const Products = () => {
             <aside
               className={`
                 ${showFilters ? "block" : "hidden"}
-                lg:block lg:w-64 lg:flex-shrink-0
+                lg:block lg:w-72 lg:flex-shrink-0 lg:sticky lg:top-28 self-start
               `}
             >
-              <div className="lg:sticky lg:top-24 space-y-4 bg-card rounded-xl p-4 shadow-sm">
+              {/* whole card is sticky on desktop now */}
+              <div className="space-y-4 bg-card rounded-xl p-4 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-bold text-foreground">Filters</h3>
                   {/* Close button only on mobile */}
@@ -107,17 +108,20 @@ const Products = () => {
                           setSelectedCategory(category.name);
                           setSelectedSubcategory(null);
                         }}
-                        className={`w-full flex items-center justify-between p-3 rounded-lg text-sm sm:text-base transition-colors ${
+                        className={`w-full flex items-center justify-between gap-3 p-3 rounded-lg text-sm sm:text-base transition-colors ${
                           selectedCategory === category.name
                             ? "bg-primary text-primary-foreground"
                             : "hover:bg-accent"
                         }`}
                       >
-                        <span className="font-semibold">{category.name}</span>
+                        {/* text block – allows wrapping nicely (fixes SPREADER & ANTIBIOTECH) */}
+                        <span className="font-semibold text-left flex-1 whitespace-normal break-words leading-snug">
+                          {category.name}
+                        </span>
                         {expandedCategory === category.name ? (
-                          <ChevronDown className="w-4 h-4" />
+                          <ChevronDown className="w-4 h-4 flex-shrink-0" />
                         ) : (
-                          <ChevronRight className="w-4 h-4" />
+                          <ChevronRight className="w-4 h-4 flex-shrink-0" />
                         )}
                       </button>
 
