@@ -1,48 +1,46 @@
 import { Link } from "react-router-dom";
 import { Leaf } from "lucide-react";
 
-// Images are now in the public folder, so we use plain URL paths.
-// Example folder structure:
-// public/
-//   assets/
-//     categorieshome/
-//       fertilizer.png
-//       fungicide.png
-//       herbicide.png
-//       insecticide.png
-//       pgr.png
-//       spreader.png
+// Images are in the public folder, so we use plain URL paths.
+// public/assets/categorieshome/...
 
 const categories = [
   {
     title: "Fertilizers",
     items: "12 Items",
     image: "/assets/categorieshome/fertilizer.png",
+    // this should match Product.category for fertilizers
+    filter: "FERTILIZER",
   },
   {
     title: "FUNGICIDE",
     items: "23 Items",
     image: "/assets/categorieshome/fungicide.png",
+    filter: "FUNGICIDE",
   },
   {
     title: "HERBICIDE",
     items: "28 Items",
     image: "/assets/categorieshome/herbicide.png",
+    filter: "HERBICIDE",
   },
   {
     title: "INSECTICIDE",
     items: "58 Items",
     image: "/assets/categorieshome/insecticide.png",
+    filter: "INSECTICIDE",
   },
   {
     title: "PGR",
     items: "6 Items",
     image: "/assets/categorieshome/pgr.png",
+    filter: "PGR",
   },
   {
     title: "SPREADER & ANTIBIOTECH",
     items: "4 Items",
     image: "/assets/categorieshome/spreader.png",
+    filter: "SPREADER & ANTIBIOTECH",
   },
 ];
 
@@ -66,7 +64,8 @@ const CategoriesNew = () => {
           {categories.map((category, index) => (
             <Link
               key={index}
-              to="/products"
+              // pass selected category in query string
+              to={`/products?category=${encodeURIComponent(category.filter)}`}
               className="group flex flex-col items-center text-center animate-fade-in-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >

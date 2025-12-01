@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react"; // 1. Import useEffect
+import { useSearchParams } from "react-router-dom"; // 2. Import useSearchParams
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -16,15 +17,36 @@ import { Eye, Filter, ChevronDown, ChevronRight } from "lucide-react";
 import { products, categories, Product } from "@/data/products";
 
 const Products = () => {
+  // 3. Initialize search params
+  const [searchParams] = useSearchParams();
+  
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(
-    null
-  );
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [showFilters, setShowFilters] = useState(true);
 
+  // 4. ADD THIS EFFECT: Listen to URL changes and update state
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get("category");
+    
+    if (categoryFromUrl) {
+      // Update the filter state
+      setSelectedCategory(categoryFromUrl);
+      // UX Improvement: Also expand the accordion for this category in the sidebar
+      setExpandedCategory(categoryFromUrl);
+      // Reset subcategory when switching main categories
+      setSelectedSubcategory(null); 
+    } else {
+      // If no URL param, reset to show all
+      setSelectedCategory(null);
+      setExpandedCategory(null);
+    }
+  }, [searchParams]); // Dependencies: run whenever URL params change
+
   const filteredProducts = products.filter((product) => {
+    // Note: This comparison is case-sensitive. 
+    // Ensure your URL param "FERTILIZER" matches your product data "FERTILIZER" exactly.
     if (selectedCategory && product.category !== selectedCategory) return false;
     if (selectedSubcategory && product.subcategory !== selectedSubcategory)
       return false;
@@ -85,6 +107,9 @@ const Products = () => {
                     onClick={() => {
                       setSelectedCategory(null);
                       setSelectedSubcategory(null);
+                      setExpandedCategory(null);
+                      // Optional: Clear URL params visually if you want
+                      // setSearchParams({}); 
                     }}
                   >
                     Clear All Filters
