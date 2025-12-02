@@ -63,7 +63,7 @@ const AboutStats = () => {
             {/* Bottom Right Stats */}
             <div className="space-y-4">
               <div className="bg-primary text-primary-foreground rounded-2xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="text-4xl font-bold mb-1">50+</div>
+                <div className="text-4xl font-bold mb-1">200+</div>
                 <div className="text-xs text-center opacity-90">Product Range</div>
               </div>
               <div className="bg-primary text-primary-foreground rounded-2xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -125,7 +125,7 @@ const AboutStats = () => {
               {/* Founder Name */}
               <div>
                 <h4 className="font-bold text-foreground text-lg leading-none mb-1">
-                  Mr. BHUPENDRA KUAMR SINGH
+                  Mr. BHUPENDRA KUMAR SINGH
                 </h4>
                 <span className="text-sm text-primary font-medium tracking-wide">
                   FOUNDER & CHAIRMAN

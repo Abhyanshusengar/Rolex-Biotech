@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -12,32 +13,85 @@ import { Link } from "react-router-dom";
 const products = [
   {
     id: 1,
-    name: "Ferrous Sulphate",
-    image: "/assets/top selling/img1.jpg",
+    name: "BLACK GOLD",
+    image: "/assets/top selling/Black Gold.jpeg",
   },
   {
     id: 2,
-    name: "Pretila EW",
-    image: "/assets/top selling/img2.jpeg",
+    name: "RAMBAAN",
+    image: "/assets/top selling/Rambaan.png",
   },
   {
     id: 3,
-    name: "Dhoom",
-    image: "/assets/top selling/img3.jpg",
+    name: "ANKUSH 505",
+    image: "/assets/top selling/ankush.png",
   },
   {
     id: 4,
-    name: "Whitekill",
-    image: "/assets/top selling/img4.jpg",
+    name: "RDX",
+    image: "/assets/top selling/RDX.PNG",
   },
   {
     id: 5,
-    name: "Black Commando",
-    image: "/assets/top selling/img.jpg",
+    name: "RDX-ULTRA",
+    image: "/assets/top selling/rdx-ultra.PNG",
+  },
+  {
+    id: 6,
+    name: "FUARA",
+    image: "/assets/top selling/Fuara.png",
+  },
+  {
+    id: 7,
+    name: "ROOT 2 FRUIT",
+    image: "/assets/top selling/ROOT2FRUIT.png",
+  },
+  {
+    id: 8,
+    name: "GANNA SPECIAL",
+    image: "/assets/top selling/SUGAR CANE SPECIAL.jpeg",
+  },
+  {
+    id: 9,
+    name: "SUPER HIT",
+    image: "/assets/top selling/SUPERHIT.jpeg",
+  },
+
+  {
+    id: 10,
+    name: "DHOOM",
+    image: "/assets/top selling/Dhoom.jpeg",
+  },
+  {
+    id: 11,
+    name: "ACTION PLUS",
+    image: "/assets/top selling/Action Plus.png",
   },
 ];
 
 const ProductShowcase = () => {
+  // State to hold the carousel API instance
+  const [api, setApi] = React.useState(null);
+  // Ref to track if the mouse is hovering over the carousel
+  const isPaused = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    // Set up an interval to scroll to the next slide every 1.5 seconds (Faster)
+    const intervalId = setInterval(() => {
+      // Only scroll if the user is not hovering
+      if (!isPaused.current) {
+        api.scrollNext();
+      }
+    }, 1000);
+
+    // Cleanup the interval when the component unmounts or api changes
+    return () => clearInterval(intervalId);
+  }, [api]);
+
   return (
     <section className="py-20 relative overflow-hidden bg-[hsl(145,30%,25%)]">
       {/* Decorative background pattern */}
@@ -62,11 +116,15 @@ const ProductShowcase = () => {
         </div>
 
         <Carousel
+          setApi={setApi} // Bind the API to our state
           opts={{
             align: "start",
             loop: true,
           }}
           className="w-full"
+          // Pause auto-scroll on hover
+          onMouseEnter={() => (isPaused.current = true)}
+          onMouseLeave={() => (isPaused.current = false)}
         >
           <CarouselContent className="-ml-6">
             {products.map((product) => (
