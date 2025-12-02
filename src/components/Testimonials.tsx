@@ -6,37 +6,42 @@ import { Card } from "./ui/card";
 const testimonials = [
   {
     id: 1,
-    title: "Client Garden Experiences",
-    content: "Arcu taciti turpis diam montes est nisl. Diam id augue sociosqu euismod imperdiet. Sed finibus ad pellentesque ante congue curabitur leo molestie. Amet aliquet venenatis fusce varius parturient",
-    author: "David Leafman",
-    role: "GREEN DESIGNER",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+    title: "Planting Success Stories",
+    content:
+      "Our organization has experienced notable improvements in pest control outcomes after switching to Rolex New Biotech products. Their technical standards, product stability, and commitment to agricultural safety are commendable.",
+    author: "Manoj Sengar",
+    role: "Authorised Dealer",
+    avatar: "/assets/manoj.jpg"
   },
   {
     id: 2,
-    title: "Planting Success Stories",
-    content: "Himenaeos etiam platea mauris dictum fermentum duis elit. Interdum urna taciti luctus finibus cras molestie parturient. Tristique primis cursus ad, habitasse tristique vivamus elementum",
-    author: "Jessica Sprout",
-    role: "INDOOR GARDENER",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+    title: "Amazing Garden Results",
+    content:
+      "Rolex New Biotech offers well-researched, professionally manufactured pesticides that meet industry expectations. The company maintains timely supply, transparent communication, and strong support services, making them a dependable choice.",
+    author: "Amit Sharma",
+    role: "Authorised Dealer",
+    avatar: "/assets/amit.jpg"
   },
   {
     id: 3,
-    title: "Amazing Garden Results",
-    content: "Outstanding service and products! Our garden has never looked better. The fertilizers are organic and highly effective. Highly recommended for anyone serious about gardening.",
-    author: "Michael Green",
-    role: "LANDSCAPE ARCHITECT",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
-  },
-  {
-    id: 4,
     title: "Professional Quality Service",
-    content: "The team's expertise and dedication to sustainable gardening practices is commendable. Their products have transformed our commercial landscape into a thriving ecosystem.",
-    author: "Sarah Garden",
-    role: "COMMERCIAL GROWER",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
-  }
+    content:
+      "We value the professionalism and product integrity demonstrated by Rolex New Biotech. Their pesticide range delivers consistent results, and their adherence to quality assurance practices reflects strong dedication to customer satisfaction.",
+    author: "Abhyanshu",
+    role: "Authorised Dealer",
+    avatar: "/assets/abhyanshu.jpg"
+  },
+   {
+    id: 4,
+    title: "Client Garden Experiences",
+    content:
+      "Rolex New Biotech delivers consistently high-quality pesticide solutions. Their products demonstrate strong efficacy, reliable formulation, and excellent field performance. The company has established itself as a trustworthy partner for sustainable crop protection.",
+    author: "Yogesh",
+    role: "Authorised Dealer",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+  },
 ];
+
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

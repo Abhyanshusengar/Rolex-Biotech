@@ -1208,11 +1208,11 @@ export const products: Product[] = [
   // SPREADER & ANTIBIOTECH
   {
     id: "TRACKER",
-    name: "SILICON BASE SURFACTANT",
+    name: "TRACKER",
     category: "SPREADER & ANTIBIOTECH",
     subcategory: "Organic",
     composition: "Humic Acid 98%",
-    image: "/assets/products/SPREADER & ANTIBIOTECH/Tracker.png",
+    image: "/assets/products/SPREADER & ANTIBIOTECH/tracker.jpg",
     description: "Soil conditioner and growth enhancer",
     crops: "Paddy, Sugarcane, Cotton, Wheat, Groundnut, Banana, Tomato, Potato, Cabbage, Cauliflower, Grapes, Brinjal, Bhindi, Tea",
     dosage: "25–50 ml / 100 litre water",
