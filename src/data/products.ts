@@ -20,6 +20,34 @@ export interface Product {
 
 export const products: Product[] = [
   // INSECTICIDES
+   {
+    id: "Dragon",
+    name: "Dragon",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: " Lambda Cyhalothrin 4.9% CS",
+    image: "/assets/products/INSECTICIDE/dragon.png",
+    description: "Highly effective systemic insecticide for controlling sucking pests",
+    targetPests: "Stem borer, Leaf folder, BPH, GLH",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "50–100 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: ["Quick action", "Long lasting", "Systemic action"]
+  },
+   {
+    id: "Dzire",
+    name: "DZIRE",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Imidacloprid 70% WG",
+    image: "/assets/products/INSECTICIDE/dzire.png",
+    description: "Highly effective systemic insecticide for controlling sucking pests",
+    targetPests: "Aphids, Jassids, Whitefly, Thrips",
+    crops: "Cotton, Rice, Vegetables, Fruits",
+    dosage: "25–30 g/acre",
+    packing: "10g, 25g, 50g, 100g, 250g",
+    features: ["Quick action", "Long lasting", "Systemic action"]
+  },
   {
     id: "white-kill",
     name: "WHITE KILL",
@@ -527,6 +555,406 @@ export const products: Product[] = [
     packing: "5 kg",
     features: ["Dual action", "Low dose", "Long duration"]
   },
+  {
+    id: "five-star",
+    name: "FIVE STAR",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Thiamethoxam 70% SG",
+    image: "/assets/products/INSECTICIDE/Five Star.png",
+    description: "Systemic insecticide for effective control of major sucking pests.",
+    targetPests: "BPH, GLH, Aphids, Whiteflies",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "25–30 g/acre",
+    packing: "25g, 50g, 100g, 250g",
+    features: [
+      "Strong systemic action",
+      "Excellent control of sucking pests",
+      "Improves crop vigor and yield",
+      "Low dose and easy to use"
+    ]
+  },
+  {
+    id: "fielder",
+    name: "FIELDER",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Thiamethoxam 30% FS",
+    image: "/assets/products/INSECTICIDE/Fielder.png",
+    description: "Seed treatment insecticide providing early protection from sucking and soil pests.",
+    targetPests: "Termites, Aphids, Jassids",
+    crops: "Paddy, Cotton, Soybean, Maize",
+    dosage: "3–8 ml/kg seed",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: [
+      "Protects seed and young seedlings",
+      "Systemic protection from early-stage pests",
+      "Ensures uniform and healthy crop establishment",
+      "Long duration protection from sucking pests"
+    ]
+  },
+  {
+    id: "forate",
+    name: "FORATE",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Phorate 10% CG",
+    image: "/assets/products/INSECTICIDE/Forate.png",
+    description: "Granular soil insecticide for control of root and soil-dwelling pests.",
+    targetPests: "Stem borer, White grubs, Termites",
+    crops: "Paddy, Groundnut, Sugarcane",
+    dosage: "8–12 kg/acre",
+    packing: "1kg, 5kg, 10kg",
+    features: [
+      "Effective soil application granule",
+      "Controls hidden soil insects",
+      "Promotes strong root development",
+      "Suitable for broadcast or row application"
+    ]
+  },
+  {
+    id: "gold-star",
+    name: "GOLD STAR",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Acephate 50% + Imidacloprid 1.8% SP",
+    image: "/assets/products/INSECTICIDE/Gold Star.png",
+    description: "Combination insecticide providing strong control of sucking pests.",
+    targetPests: "Aphids, Jassids, Whiteflies",
+    crops: "Cotton, Vegetables, Paddy",
+    dosage: "200–500 g/acre",
+    packing: "100g, 250g, 500g, 1kg",
+    features: [
+      "Dual mode of action",
+      "Quick knockdown and long residual effect",
+      "Excellent resistance management tool",
+      "Improves crop health and greening"
+    ]
+  },
+  {
+    id: "maha-vos",
+    name: "MAHA VOS",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "DDVP 76 EC",
+    image: "/assets/products/INSECTICIDE/Maha Vos.png",
+    description: "Contact and fumigant insecticide for rapid knockdown.",
+    targetPests: "BPH, Leaf folder, Thrips",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "200–300 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L, 5L",
+    features: [
+      "Fast knockdown action",
+      "Effective on a wide range of insects",
+      "Good for high pest pressure situations",
+      "Flexible use in multiple crops"
+    ]
+  },
+  {
+    id: "mahabaan",
+    name: "MAHABAAN",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Chlorpyriphos 20% EC",
+    image: "/assets/products/INSECTICIDE/mahabaan.png",
+    description: "Broad-spectrum organophosphate insecticide for soil and foliar pests.",
+    targetPests: "Termites, Borers, Leaf folder",
+    crops: "Paddy, Groundnut, Vegetables",
+    dosage: "500–700 ml/acre",
+    packing: "250ml, 500ml, 1L, 5L",
+    features: [
+      "Effective against termites and borers",
+      "Good residual control",
+      "Suitable for both soil and foliar application",
+      "Trusted molecule in multiple crops"
+    ]
+  },
+  {
+    id: "ozone",
+    name: "OZONE",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Imidacloprid 30.5% SC",
+    image: "/assets/products/INSECTICIDE/Ozone.png",
+    description: "Systemic insecticide providing long duration control of sucking pests.",
+    targetPests: "Aphids, Jassids, Thrips, BPH",
+    crops: "Cotton, Paddy, Vegetables",
+    dosage: "40–60 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: [
+      "Highly systemic with long residual effect",
+      "Excellent control of sucking pests",
+      "Low dose and user friendly",
+      "Improves crop vigor and productivity"
+    ]
+  },
+  {
+    id: "pole-star",
+    name: "POLE STAR",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Diafenthiuron 50% WP",
+    image: "/assets/products/INSECTICIDE/Pole Star.png",
+    description: "Insecticide and acaricide effective against mites and sucking pests.",
+    targetPests: "Whiteflies, Thrips, Mites",
+    crops: "Cotton, Vegetables, Tea",
+    dosage: "200–300 g/acre",
+    packing: "100g, 250g, 500g, 1kg",
+    features: [
+      "Dual action on insects and mites",
+      "Long duration protection",
+      "Ideal for resistance management",
+      "Good crop safety in recommended doses"
+    ]
+  },
+  {
+    id: "shakaal",
+    name: "SHAKAAL",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Deltamethrin + Buprofezin",
+    image: "/assets/products/INSECTICIDE/Shakaal.png",
+    description: "Combination insecticide for effective control of hoppers and borers.",
+    targetPests: "BPH, Leaf folder, Borers",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "150–300 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: [
+      "Combination of contact and systemic action",
+      "Good knockdown and residual effect",
+      "Controls both nymphs and adults",
+      "Helps in managing resistant pest populations"
+    ]
+  },
+  {
+    id: "sniper",
+    name: "SNIPER",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Lambda Cyhalothrin 5% EC",
+    image: "/assets/products/INSECTICIDE/Sniper.png",
+    description: "Synthetic pyrethroid insecticide with fast knockdown.",
+    targetPests: "Stem borer, Leaf folder, Caterpillars",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "150–250 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: [
+      "Quick knockdown of chewing pests",
+      "Broad-spectrum contact action",
+      "Low dose and highly effective",
+      "Good compatibility with IPM programs when used judiciously"
+    ]
+  },
+  {
+    id: "super-10",
+    name: "SUPER-10",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Cypermethrin 10% EC",
+    image: "/assets/products/INSECTICIDE/Super 10.png",
+    description: "Contact insecticide for control of chewing and some sucking pests.",
+    targetPests: "Borers, Caterpillars, Thrips",
+    crops: "Paddy, Cotton, Vegetables",
+    dosage: "150–250 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: [
+      "Fast acting pyrethroid",
+      "Effective on a wide range of lepidopteran pests",
+      "Good knockdown with residual effect",
+      "Economical solution for farmers"
+    ]
+  },
+  {
+    id: "super-expert",
+    name: "SUPER EXPERT",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Thiamethoxam 75% SG",
+    image: "/assets/products/INSECTICIDE/Super Expert.png",
+    description: "Highly concentrated systemic insecticide for sucking pests.",
+    targetPests: "BPH, GLH, Aphids, Whiteflies",
+    crops: "Paddy, Cotton, Vegetables",
+    dosage: "20–30 g/acre",
+    packing: "25g, 50g, 100g, 250g",
+    features: [
+      "High-strength formulation for low dose application",
+      "Excellent systemic action",
+      "Long duration control of sucking pests",
+      "Improves crop greening and yield"
+    ]
+  },
+  {
+    id: "tapu",
+    name: "TAPU",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Pymetrozine 50% WG",
+    image: "/assets/products/INSECTICIDE/TAPU.jpeg",
+    description: "Specialized hopper stopper insecticide.",
+    targetPests: "BPH, GLH, WBPH, Whiteflies",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "120–160 g/acre",
+    packing: "50g, 100g, 250g, 500g",
+    features: [
+      "Excellent control of planthoppers",
+      "Unique mode of action (hopper stopper)",
+      "Safe to beneficial insects when used as directed",
+      "Prevents resurgence and hopper burn"
+    ]
+  },
+  {
+    id: "tornado-super",
+    name: "TORNADO SUPER",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Bio Insecticide",
+    image: "/assets/products/INSECTICIDE/Tornado Super.png",
+    description: "Biological insecticide for eco-friendly pest management.",
+    targetPests: "Aphids, Thrips, Borers",
+    crops: "Vegetables, Paddy, Cotton",
+    dosage: "150–250 g/acre",
+    packing: "50g, 100g, 250g, 500g, 1kg",
+    features: [
+      "Eco-friendly and residue free",
+      "Safe to beneficial insects and environment",
+      "Can be used in organic and residue-conscious farming",
+      "Compatible with IPM programs"
+    ]
+  },
+  {
+    id: "encounter",
+    name: "ENCOUNTER",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Dinotefuran 20% SG",
+    image: "/assets/products/INSECTICIDE/encounter.jpg",
+    description: "Neonicotinoid insecticide with rapid systemic action.",
+    targetPests: "BPH, GLH, Aphids",
+    crops: "Paddy, Vegetables, Cotton",
+    dosage: "40–50 g/acre",
+    packing: "50g, 100g, 250g, 500g",
+    features: [
+      "Quick uptake and translocation in plant",
+      "Effective at low dose",
+      "Long lasting control of sucking pests",
+      "Rainfast within a short time after application"
+    ]
+  },
+  {
+    id: "cotton-guard",
+    name: "COTTON GUARD",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Neem 1500 ppm",
+    image: "/assets/products/INSECTICIDE/Cotton Guard.png",
+    description: "Neem-based botanical insecticide for safe pest control.",
+    targetPests: "Whiteflies, Jassids, Caterpillars",
+    crops: "Cotton, Vegetables, Paddy",
+    dosage: "400–700 ml/acre",
+    packing: "250ml, 500ml, 1L, 5L",
+    features: [
+      "Botanical and eco-safe formulation",
+      "Multiple modes of action (repellent, antifeedant, growth regulator)",
+      "Safe for beneficial insects when used properly",
+      "Helps reduce chemical pesticide load"
+    ]
+  },
+  {
+    id: "nevon",
+    name: "NEVON",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Dichlorvos 76% EC",
+    image: "/assets/products/INSECTICIDE/Nevon.png",
+    description: "Contact and fumigant insecticide for rapid pest knockdown.",
+    targetPests: "Sucking pests, Borers",
+    crops: "Cotton, Paddy, Vegetables",
+    dosage: "200–300 ml/acre",
+    packing: "100ml, 250ml, 500ml, 1L, 5L",
+    features: [
+      "Strong contact and fumigant action",
+      "Rapid knockdown of target pests",
+      "Useful in high infestation conditions",
+      "Flexible use across many crops"
+    ]
+  },
+  {
+    id: "racer",
+    name: "RACER",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Quinalphos 25% EC",
+    image: "/assets/products/INSECTICIDE/RACER.jpeg",
+    description: "Organophosphate insecticide for major chewing and sucking pests.",
+    targetPests: "Borers, Leaf folder, Hoppers",
+    crops: "Cotton, Paddy, Vegetables",
+    dosage: "300–500 ml/acre",
+    packing: "250ml, 500ml, 1L, 5L",
+    features: [
+      "Effective on borers and leaf feeders",
+      "Good residual control",
+      "Proven performance in field conditions",
+      "Suitable for tank-mix programs as per label"
+    ]
+  },
+  {
+    id: "delta-max",
+    name: "DELTA MAX",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Deltamethrin 11% EC",
+    image: "/assets/products/INSECTICIDE/DELTA MAX.jpeg",
+    description: "High concentration pyrethroid insecticide for tough pests.",
+    targetPests: "Borers, Leaf folder, Cutworms",
+    crops: "Cotton, Paddy, Vegetables",
+    dosage: "0.8–1 ml/liter",
+    packing: "100ml, 250ml, 500ml, 1L",
+    features: [
+      "High strength formulation",
+      "Strong knockdown and residual effect",
+      "Low volume, easy handling",
+      "Effective even at low dose"
+    ]
+  },
+  {
+    id: "alarm",
+    name: "ALARM",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Buprofezin 15% + Acephate 35% WP",
+    image: "/assets/products/INSECTICIDE/Alarm.png",
+    description: "Combination product for powerful control of sucking pests.",
+    targetPests: "BPH, WBPH, Aphids, Jassids",
+    crops: "Paddy, Cotton, Vegetables",
+    dosage: "1 g/liter",
+    packing: "100g, 250g, 500g, 1kg",
+    features: [
+      "Dual action: IGR + systemic",
+      "Controls both nymphs and adults",
+      "Long duration protection",
+      "Helps delay resistance development"
+    ]
+  },
+  {
+    id: "superhit",
+    name: "SUPERHIT",
+    category: "INSECTICIDE",
+    subcategory: "Chemical",
+    composition: "Dinotefuran + Pymetrozine",
+    image: "/assets/products/INSECTICIDE/SUPERHIT.jpeg",
+    description: "Advanced combination insecticide targeting hoppers and sucking pests.",
+    targetPests: "BPH, GLH, Whiteflies, Aphids, Jassids, Thrips, BPH/WBPH",
+    crops: "Paddy (Rice), Cotton, Vegetables (Chilli, Tomato, Brinjal, Okra), Soybean, Groundnut, Tea, Fruits (Citrus, Mango)",
+    dosage: "As recommended",
+    packing: "Standard packs",
+    features: [
+      "Powerful combination of two modern molecules",
+      "Excellent control of hoppers and other sucking pests",
+      "Strong systemic and translaminar activity",
+      "Ideal for high value crops and resistant pest populations"
+    ]
+  },
+
 
   // FUNGICIDES
   {
@@ -628,20 +1056,6 @@ export const products: Product[] = [
     features: ["Dual action", "Organic", "Safe"]
   },
   {
-    id: "tebular",
-    name: "TEBULAR",
-    category: "FUNGICIDE",
-    subcategory: "Chemical",
-    composition: "Tebuconazole 25.9% EC",
-    image: "/assets/products/fungicide/Tebular.png",
-    description: "Premium combination fungicide",
-    targetPests: "Sheath blight, Blast, Rust",
-    crops: "Rice, Wheat",
-    dosage: "100-120g/acre",
-    packing: "50g, 100g, 250g",
-    features: ["Dual action", "Systemic + Contact", "Premium"]
-  },
-  {
     id: "defence",
     name: "DEFENCE",
     category: "FUNGICIDE",
@@ -681,20 +1095,6 @@ export const products: Product[] = [
     crops: " Paddy, Potato, Mustard, Groundnut Target",
     dosage: "500-600g/acre",
     packing: "250g, 500g, 1kg",
-    features: ["Contact action", "Bactericidal", "Broad spectrum"]
-  },
-  {
-    id: "copper",
-    name: "MAHA VALIDA",
-    category: "FUNGICIDE",
-    subcategory: "Chemical",
-    composition: "COPPER OXYCHLORIDE 50% WP",
-    image: "/assets/products/fungicide/Copper.png",
-    description: "Contact fungicide and bactericide",
-    targetPests: "Black Spot, Rust, Fire Blight & Bacterial Leaf Spot",
-    crops: "Mango, Chilli, Apple, Grapes, Potato, Tomato & Citrus",
-    dosage: "500 g–1 kg/acre",
-    packing: "500g",
     features: ["Contact action", "Bactericidal", "Broad spectrum"]
   },
   {
@@ -739,6 +1139,165 @@ export const products: Product[] = [
     packing: "500gm",
     features: ["Seed treatment", "Systemic", "Long duration"]
   },
+{
+  id: "trico75",
+  name: "TRICO75",
+  category: "FUNGICIDE",
+  subcategory: "Chemical",
+  composition: "Tricyclazole 75% WP",
+  image: "/assets/products/fungicide/Trico 75.png",
+  description: "Specialized fungicide for blast disease control in paddy.",
+  targetPests: "Leaf blast, Neck blast",
+  crops: "Paddy",
+  dosage: "0.6–1 g/liter",
+  packing: "100g, 250g, 500g",
+  features: [
+    "Highly effective against blast",
+    "Systemic protection",
+    "Strengthens plant immunity",
+    "Improves grain quality"
+  ]
+},
+{
+  id: "tebular",
+  name: "TEBULAR",
+  category: "FUNGICIDE",
+  subcategory: "Chemical",
+  composition: "Tebuconazole 25.9% EC",
+  image: "/assets/products/fungicide/Tebular.png",
+  description: "Broad-spectrum triazole fungicide for multiple crops.",
+  targetPests: "Sheath blight, Leaf spot, Mildew",
+  crops: "Paddy, Groundnut, Vegetables",
+  dosage: "1 ml/liter",
+  packing: "250ml, 500ml, 1L",
+  features: [
+    "Strong systemic action",
+    "Prevents fungal spread quickly",
+    "Long residual effect",
+    "Enhances crop appearance and health"
+  ]
+},
+{
+  id: "rolaxyl",
+  name: "ROLAXYL",
+  category: "FUNGICIDE",
+  subcategory: "Chemical",
+  composition: "Metalaxyl 35% WS (Seed Treatment)",
+  image: "/assets/products/fungicide/Rolaxyl.png",
+  description: "Systemic seed treatment fungicide protecting early crop growth.",
+  targetPests: "Downy mildew, Damping off",
+  crops: "Paddy, Wheat, Mustard",
+  dosage: "6–8 g/kg seed",
+  packing: "100g, 250g, 500g",
+  features: [
+    "Promotes healthy germination",
+    "Systemic seed protection",
+    "Prevents early fungal infection",
+    "Ensures uniform crop establishment"
+  ]
+},
+{
+  id: "metazeb",
+  name: "METAZEB",
+  category: "FUNGICIDE",
+  subcategory: "Chemical",
+  composition: "Metalaxyl 8% + Mancozeb 64% WP",
+  image: "/assets/products/fungicide/Metazeb.png",
+  description: "Combination fungicide effective against downy mildew and blights.",
+  targetPests: "Late blight, Downy mildew",
+  crops: "Potato, Tomato, Grapes",
+  dosage: "2–2.5 g/liter",
+  packing: "100g, 250g, 500g, 1kg",
+  features: [
+    "Dual systemic + contact action",
+    "Strong protection against oomycetes",
+    "Prevents spread and secondary infection",
+    "Good coverage and sticking ability"
+  ]
+},
+{
+  id: "kavach",
+  name: "KAVACH",
+  category: "FUNGICIDE",
+  subcategory: "Bio",
+  composition: "Bio Fungicide",
+  image: "/assets/products/fungicide/Kavach.png",
+  description: "Bio fungicide suitable for organic and conventional farming.",
+  targetPests: "Root rot, Damping off, Mildew",
+  crops: "All crops",
+  dosage: "2–3 ml/liter",
+  packing: "250ml, 500ml, 1L",
+  features: [
+    "Eco-friendly and residue-free",
+    "Safe for beneficial microbes",
+    "Boosts plant immunity",
+    "Suitable for sustainable farming"
+  ]
+},
+{
+  id: "kaptan",
+  name: "KAPTAN",
+  category: "FUNGICIDE",
+  subcategory: "Chemical",
+  composition: "Captan 70% + Hexaconazole 5% WP",
+  image: "/assets/products/fungicide/Kaptan.png",
+  description: "Broad-spectrum fungicide with protective and curative action.",
+  targetPests: "Blights, Mildew, Anthracnose",
+  crops: "Fruits, Vegetables",
+  dosage: "2–2.5 g/liter",
+  packing: "100g, 250g, 500g, 1kg",
+  features: [
+    "Protective + systemic dual action",
+    "Improves fruit quality",
+    "Controls major foliar diseases",
+    "Ideal for high-value crops"
+  ]
+},
+{
+  id: "copper-oxychloride",
+  name: "COPPER",
+  category: "FUNGICIDE",
+  subcategory: "Chemical",
+  composition: "Copper Oxychloride 50% WP",
+  image: "/assets/products/fungicide/Copper.png",
+  description: "Powerful contact fungicide widely used in horticulture.",
+  targetPests: "Leaf spot, Blight, Anthracnose",
+  crops: "Tomato, Potato, Grapes, Citrus",
+  dosage: "2–3 g/liter",
+  packing: "100g, 250g, 500g, 1kg",
+  features: [
+    "Strong contact action",
+    "Broad-spectrum fungal protection",
+    "Prevents disease spread effectively",
+    "Widely used in fruits & vegetables"
+  ]
+},
+
+{
+  id: "ajooba",
+  name: "AJOOBA",
+  category: "FUNGICIDE",
+  subcategory: "Growth Regulator",
+  composition: "Gibberellic Acid 0.001% L",
+  image: "/assets/products/fungicide/Ajooba.png",
+  description: "Plant growth stimulant that enhances vegetative and reproductive growth.",
+  targetPests: "Growth regulation (no pests)",
+  crops: "Vegetables, Fruits, Field crops",
+  dosage: "1–2 ml/liter",
+  packing: "100ml, 250ml, 500ml, 1L",
+  features: [
+    "Promotes cell elongation",
+    "Enhances flowering & fruiting",
+    "Improves overall plant vigor",
+    "Boosts crop productivity"
+  ]
+},
+
+
+
+
+
+
 
   // HERBICIDES
   {
@@ -813,7 +1372,7 @@ export const products: Product[] = [
   },
   {
     id: "fast clean",
-    name: "FAST cLEAN",
+    name: "FAST CLEAN",
     category: "HERBICIDE",
     subcategory: "Post-emergence",
     composition: "GLYPHOSATE 41% SL",
@@ -979,6 +1538,204 @@ export const products: Product[] = [
     packing: "50ml, 100ml, 250ml",
     features: ["Low dose", "Effective on sedges", "Safe"]
   },
+
+{
+  id: "activator",
+  name: "ACTIVATOR",
+  category: "HERBICIDE",
+  subcategory: "Silicon Based Surfactant",
+  composition: "Silicon Based Super Spreader",
+  image: "/assets/products/HERBICIDE/Activator.png",
+  description: "High-performance silicon-based surfactant that improves spray coverage and penetration.",
+  targetPests: "Wetting agent (no pests)",
+  crops: "All crops",
+  dosage: "0.3–0.5 ml/liter",
+  packing: "100ml, 250ml, 500ml, 1L",
+  features: [
+    "Increases spray spreading and sticking",
+    "Enhances pesticide absorption",
+    "Reduces spray runoff",
+    "Improves overall spray efficiency"
+  ]
+},
+
+
+{
+  id: "champion",
+  name: "CHAMPION",
+  category: "HERBICIDE",
+  subcategory: "Chemical",
+  composition: "Azoxystrobin 18.2% + Difenoconazole 11.4% SC",
+  image: "/assets/products/HERBICIDE/Champion.png",
+  description: "Broad-spectrum fungicide with dual action for controlling major fungal diseases.",
+  targetPests: "Powdery mildew, Blights, Anthracnose",
+  crops: "Grapes, Vegetables, Fruits",
+  dosage: "0.8–1 ml/liter",
+  packing: "100ml, 250ml, 500ml, 1L",
+  features: [
+    "Dual systemic action",
+    "Controls a wide range of fungal infections",
+    "Long-lasting protection",
+    "Improves fruit shine & quality"
+  ]
+},
+
+
+{
+  id: "clean-bold",
+  name: "CLEAN BOLD",
+  category: "HERBICIDE",
+  subcategory: "Post-emergence",
+  composition: "2,4-D Ethyl Ester 38% EC",
+  image: "/assets/products/HERBICIDE/Clean Bold.png",
+  description: "Selective herbicide for broadleaf weed control in major cereal crops.",
+  targetPests: "Broadleaf weeds",
+  crops: "Paddy, Wheat, Maize",
+  dosage: "400–600 ml/acre",
+  packing: "500ml, 1L",
+  features: [
+    "Effective broadleaf weed control",
+    "Selective action on crops",
+    "Cost-effective solution",
+    "Suitable for wide area application"
+  ]
+},
+{
+  id: "glacier",
+  name: "GLACIER",
+  category: "HERBICIDE",
+  subcategory: "Non-selective",
+  composition: "Glyphosate 41% SL",
+  image: "/assets/products/HERBICIDE/Glacier.png",
+  description: "Non-selective herbicide for complete weed and grass elimination.",
+  targetPests: "All weeds & grasses",
+  crops: "Non-selective (directed spray)",
+  dosage: "800–1000 ml/acre",
+  packing: "500ml, 1L, 5L",
+  features: [
+    "Kills all green vegetation",
+    "Highly effective systemic action",
+    "Best for land preparation and bund cleaning",
+    "Rainfast after a short period"
+  ]
+},
+{
+  id: "locker",
+  name: "LOCKER",
+  category: "HERBICIDE",
+  subcategory: "Selective",
+  composition: "Imazethapyr 10% SL",
+  image: "/assets/products/HERBICIDE/Locker.png",
+  description: "Selective herbicide for broadleaf and grassy weeds in soybean and groundnut.",
+  targetPests: "Broadleaf & grassy weeds",
+  crops: "Soybean, Groundnut",
+  dosage: "300–350 ml/acre",
+  packing: "250ml, 500ml, 1L",
+  features: [
+    "Selective action ensures crop safety",
+    "Long duration weed suppression",
+    "Systemic control of tough weeds",
+    "Suitable for early post-emergence"
+  ]
+},
+{
+  id: "pretila-ew",
+  name: "PRETILA EW",
+  category: "HERBICIDE",
+  subcategory: "Pre-emergence",
+  composition: "Pretilachlor 37% EW",
+  image: "/assets/products/HERBICIDE/PRETILA-EW.jpeg",
+  description: "Selective pre-emergence herbicide for weed control in paddy fields.",
+  targetPests: "Annual grasses & broadleaf weeds",
+  crops: "Paddy",
+  dosage: "600–800 ml/acre",
+  packing: "500ml, 1L",
+  features: [
+    "Prevents early weed competition",
+    "Safe to rice seedling growth",
+    "Controls tough grasses effectively",
+    "Ideal for nursery and main field use"
+  ]
+},
+{
+  id: "terrano",
+  name: "TERRANO",
+  category: "HERBICIDE",
+  subcategory: "Non-selective",
+  composition: "Paraquat Dichloride 24% SL",
+  image: "/assets/products/HERBICIDE/Terrano.png",
+  description: "Fast-acting contact herbicide for controlling all green vegetation.",
+  targetPests: "All green vegetation",
+  crops: "Plantations, Orchards, Non-cropped areas",
+  dosage: "500–600 ml/acre",
+  packing: "500ml, 1L",
+  features: [
+    "Quick burn-down effect",
+    "Ideal for orchard floor management",
+    "No soil residual activity",
+    "Best for non-cropped areas"
+  ]
+},
+{
+  id: "super-tiger",
+  name: "SUPER TIGER",
+  category: "HERBICIDE",
+  subcategory: "General Use",
+  composition: "Herbicide (Broad Spectrum)",
+  image: "/assets/products/HERBICIDE/Super Tiger.png",
+  description: "Broad-spectrum herbicide for effective control of weeds.",
+  targetPests: "Broad spectrum weeds",
+  crops: "General weed control",
+  dosage: "800–1200 ml/acre",
+  packing: "250ml, 500ml, 1L",
+  features: [
+    "Controls a wide range of weeds",
+    "Effective in various soil conditions",
+    "Fast action on weed suppression",
+    "Economical and reliable"
+  ]
+},
+
+
+{
+  id: "double-kick",
+  name: "DOUBLE KICK",
+  category: "HERBICIDE",
+  subcategory: "Bio",
+  composition: "Bio Insecticide",
+  image: "/assets/products/HERBICIDE/Double Kick.png",
+  description: "Bio-based insecticide for safe control of sucking pests, thrips and mites.",
+  targetPests: "Thrips, Mites, Sucking pests",
+  crops: "Vegetables, Fruits",
+  dosage: "2–3 ml/liter",
+  packing: "250ml, 500ml, 1L",
+  features: [
+    "Eco-friendly and residue free",
+    "Safe for beneficial insects",
+    "Improves crop tolerance to pest attack",
+    "Ideal for residue-sensitive farming"
+  ]
+},
+
+{
+  id: "nitro-power",
+  name: "NITRO POWER",
+  category: "HERBICIDE",
+  subcategory: "Growth Promoter",
+  composition: "Nitrobenzene 35% VV",
+  image: "/assets/products/HERBICIDE/Nitro Power.png",
+  description: "Plant energizer that boosts flowering, growth and overall plant vigor.",
+  targetPests: "Growth promoter (no pests)",
+  crops: "All crops",
+  dosage: "2–3 ml/liter",
+  packing: "250ml, 500ml, 1L",
+  features: [
+    "Enhances flowering and fruit set",
+    "Improves plant metabolism",
+    "Boosts crop yield potential",
+    "Reduces stress impact on crops"
+  ]
+},
 
   // PGR (Plant Growth Regulators)
   {

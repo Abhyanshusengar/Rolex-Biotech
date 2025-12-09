@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"; // 1. Import useEffect
-import { useSearchParams } from "react-router-dom"; // 2. Import useSearchParams
+import { useState, useEffect } from "react";
+import { useSearchParams, Link } from "react-router-dom"; // ✅ Added Link here
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -17,36 +17,31 @@ import { Eye, Filter, ChevronDown, ChevronRight } from "lucide-react";
 import { products, categories, Product } from "@/data/products";
 
 const Products = () => {
-  // 3. Initialize search params
   const [searchParams] = useSearchParams();
-  
+
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(
+    null
+  );
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [showFilters, setShowFilters] = useState(true);
 
-  // 4. ADD THIS EFFECT: Listen to URL changes and update state
+  // Sync selected category with URL ?category=
   useEffect(() => {
     const categoryFromUrl = searchParams.get("category");
-    
+
     if (categoryFromUrl) {
-      // Update the filter state
       setSelectedCategory(categoryFromUrl);
-      // UX Improvement: Also expand the accordion for this category in the sidebar
       setExpandedCategory(categoryFromUrl);
-      // Reset subcategory when switching main categories
-      setSelectedSubcategory(null); 
+      setSelectedSubcategory(null);
     } else {
-      // If no URL param, reset to show all
       setSelectedCategory(null);
       setExpandedCategory(null);
     }
-  }, [searchParams]); // Dependencies: run whenever URL params change
+  }, [searchParams]);
 
   const filteredProducts = products.filter((product) => {
-    // Note: This comparison is case-sensitive. 
-    // Ensure your URL param "FERTILIZER" matches your product data "FERTILIZER" exactly.
     if (selectedCategory && product.category !== selectedCategory) return false;
     if (selectedSubcategory && product.subcategory !== selectedSubcategory)
       return false;
@@ -108,8 +103,8 @@ const Products = () => {
                       setSelectedCategory(null);
                       setSelectedSubcategory(null);
                       setExpandedCategory(null);
-                      // Optional: Clear URL params visually if you want
-                      // setSearchParams({}); 
+                      // If you want to clear URL params too, you can use:
+                      // setSearchParams({});
                     }}
                   >
                     Clear All Filters
@@ -139,7 +134,6 @@ const Products = () => {
                             : "hover:bg-accent"
                         }`}
                       >
-                        {/* text block – allows wrapping nicely (fixes SPREADER & ANTIBIOTECH) */}
                         <span className="font-semibold text-left flex-1 whitespace-normal break-words leading-snug">
                           {category.name}
                         </span>
@@ -380,9 +374,12 @@ const Products = () => {
                     </div>
                   )}
 
-                  <Button className="w-full bg-lime-accent hover:bg-lime-accent/90 text-foreground mt-2">
-                    Request Quote
-                  </Button>
+                  {/* ✅ Request Quote Button -> Contact Page */}
+                  <Link to="/contact">
+                    <Button className="w-full bg-lime-accent hover:bg-lime-accent/90 text-foreground mt-2">
+                      Request Quote
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </>
