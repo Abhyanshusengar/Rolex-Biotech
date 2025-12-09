@@ -1,4 +1,4 @@
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
@@ -59,12 +59,6 @@ const Navigation = () => {
               <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-lime-accent transform origin-left transition-transform duration-300 ${isActive('/contact') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
           </div>
-
-          {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hidden md:flex text-primary-foreground hover:text-lime-accent hover:bg-primary-foreground/10">
-              <Search className="h-5 w-5" />
-            </Button>
             
             {/* Desktop CTA */}
             <Link to="/contact">
@@ -83,7 +77,6 @@ const Navigation = () => {
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
-          </div>
         </div>
 
         {/* Mobile Menu */}
