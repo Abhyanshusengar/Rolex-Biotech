@@ -125,7 +125,7 @@ const AboutStats = () => {
               {/* Founder Name */}
               <div>
                 <h4 className="font-bold text-foreground text-lg leading-none mb-1">
-                  Mr. BHUPENDRA KUMAR SINGH
+                   DR. BHUPENDRA KUMAR SINGH
                 </h4>
                 <span className="text-sm text-primary font-medium tracking-wide">
                   FOUNDER & CHAIRMAN

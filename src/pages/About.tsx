@@ -479,7 +479,7 @@ const About = () => {
 
                   <h3 className="text-3xl font-bold mb-1">
 
-                    Mr. BHUPENDRA KUMAR SINGH
+                   DR. BHUPENDRA KUMAR SINGH
 
                   </h3>
 
